@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <link href="./css/Reservation.css" rel="stylesheet" />
+    <script src="Selector.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <span class="reserve_message">예약하기</span>
+
+        <div class="main_photo">
+            <div class="common-style icon-style bg-image"></div> <!-- 아이콘 -->
+            <div class="common-style panel-style"></div>
+            <span class="common-style color-black font-noto restaurant-name">단성무이</span>
+            <div class="common-style image-panel bg-image"></div>
+            <span class="common-style color-black font-noto description">청주 충북대학교 맛집 감성 술집 나베가 맛있음 ㅇㅇ </span>
+        </div>
+
+        <div class="main_content">
+            <span class="common-large top-50">예약일시</span>
+            <div class="reserve_bar">
+                <div id="datepickerWrapper">
+                    <input id="calendar">
+                </div>
+
+                <select id="personCount"></select>
+            </div>
+
+            <span class="common-large top-300">상세정보</span>
+            <div class="common-style container-style border-style reservation-container">
+                <span class="common bold-font top-20">전화번호</span>
+                <span class="common regular-font top-70">010-4266-8521</span>
+                <span class="common bold-font top-120">영업시간</span>
+                <span class="common regular-font top-170">모든 날 모든 순간</span>
+                <span class="common bold-font top-230">정기휴무</span>
+                <span class="common regular-font top-280">코딩에 휴무가 있나</span>
+            </div>
+
+            <span class="common-large small-width top-835">사진</span>
+
+            <div class="photo_list">
+                <div class="photo" style="background-image: url('../images/v9_196.png');"></div>
+                <div class="photo" style="background-image: url('../images/v9_198.png');"></div>
+                <div class="photo" style="background-image: url('../images/v9_202.png');"></div>
+                <div class="photo" style="background-image: url('../images/v9_204.png');"></div>
+            </div>
+
+            <button class="common-style btn-style text-center font-noto reservation-button">예약하기</button>
+
+            <span class="common-style text-info text-center font-inter reservation-confirm">예약정보확인</span>
+
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>
