@@ -19,5 +19,5 @@ function updateSelectedData(newDate) {
   var selectedDate = newDate || $("#calendar").datepicker("getDate"),
     personCount = $("#personCount").val();
 
-  $(".v9_174").text(`${selectedDate}/${personCount}`);
+  $("").text(`${selectedDate}/${personCount}`);
 }
