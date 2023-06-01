@@ -144,7 +144,7 @@ body {
 }
 
 .restaurant-name {
-  width: 170px;
+  width: 340px;
   top: 46px;
   left: 459px;
   font-weight: Bold;
@@ -342,4 +342,41 @@ body {
   left: 3180px;
   font-weight: Regular;
   font-size: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+  .main {
+    width: 20vw;
+    height: auto;
+    max-width: none;
+    max-height: none;
+  }
+
+  .main_content, .main_photo, .reserve_bar, .photo_list {
+    width: 20%;
+    height: auto;
+    left: 0;
+  }
+
+  .common, .common-large, .reserve_message {
+    width: 20%;
+    left: 0;
+  }
+
+  .common-style, .bg-image, .icon-style, .panel-style, .restaurant-name, .image-panel, .description {
+    width: 20%;
+    height: auto;
+    left: 0;
+  }
+
+  .photo {
+    width: 20%;
+    height: auto;
+  }
+
+  .reservation-container, .reservation-button {
+    width: 20%;
+    height: auto;
+    left: 0;
+  }
 }
