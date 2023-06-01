@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 1080px;
+      background-color: #f0f0f0;
+      max-width: 1920px;
+      margin: 0 auto;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .menu-bar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu-bar li {
+      list-style: none;
+    }
+
+    .menu-bar a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .signup-area {
+      position: relative;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .signup-area h1 {
+      z-index: 10;
+      position: relative;
+      color: #333;
+      font-size: 40px;
+      margin-bottom: 70px;
+    }
+
+    .signup-area::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 25%;
+      background-color: pink;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+      width: 30%;
+      height: 80%;
+      padding: 50px;
+      border-radius: 15px;
+      background-color: #fff;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+    }
+
+    .form-section input {
+      width: 88%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      background-repeat: no-repeat;
+      background-position: 5px center;
+      padding-left: 30px;
+    }
+
+    .form-section select {
+      width: 95%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .email-section {
+      display: flex;
+      width: 95%;
+      gap: 20px;
+    }
+
+    .email-section input,
+    .email-section select {
+      flex: 1;
+    }
+
+    .enter-button {
+      width: 95px;
+      height: auto;
+      padding: 10px;
+      margin: auto;
+      display: block;
+      cursor: pointer;
+      color: #fff;
+      background-color: #000000;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .enter-button:hover {
+      background-color: rgb(73, 73, 73);
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      text-align: center;
+      margin-top: 10%;
+    }
+
+    .links a {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      text-decoration: none;
+    }
+
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .tnc {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tnc-control {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .tnc-control label {
+      white-space: nowrap;
+      margin-right: 5px;
+    }
+
+    .tnc-button {
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+    }
+
+    .tnc-content {
+      width: 90%;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .tnc-content.visible {
+      max-height: 200px;
+    }
+
+    /* Added styles for logo icons */
+    .logo-icon {
+      position: relative;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .logo-icon img {
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+  <script>
+    function handleSignUp() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirm-password').value;
+      var email = document.getElementById('email').value;
+      var emailDomain = document.getElementById('email-provider').value;
+      var gender = document.getElementById('gender').value;
+      var dateOfBirth = document.getElementById('date-of-birth').value;
+      var agreeTnC = document.getElementById('agree-tnc').checked;
+
+      if (username === "" || password === "" || confirmPassword === "" || email === "" || emailDomain === "" || gender === "" || dateOfBirth === "") {
+        alert("모든 필드를 채워주세요.");
+      } else if (password !== confirmPassword) {
+        alert("비밀번호가 일치하지 않습니다.");
+      } else if (!agreeTnC) {
+        alert("약관에 동의해주세요.");
+      } else {
+        alert("회원가입이 완료되었습니다!");
+        window.location.href = "login.html";
+      }
+    }
+
+    function toggleTnCContent() {
+      var tncContentDiv = document.getElementById("tnc-content");
+      tncContentDiv.classList.toggle("visible");
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <img src="logo.png" alt="Logo">
+      </div>
+      <ul class="menu-bar">
+        <li><a href="#">Menu 1</a></li>
+        <li><a href="#">Menu 2</a></li>
+        <li><a href="#">Menu 3</a></li>
+        <li><a href="#">Menu 4</a></li>
+      </ul>
+    </div>
+    <div class="signup-area">
+      <h1>회원가입</h1>
+      <div class="signup-form">
+        <div class="form-section">
+          <div class="logo-icon">
+            <img src="person-logo.png">
+            <input type="text" id="username" name="username" placeholder="사용자 이름">
+          </div>
+          <div class="email-section">
+            <div class="logo-icon">
+              <img src="email-logo.png">
+              <input type="text" id="email" name="email" placeholder="이메일">
+            </div>
+            <select id="email-provider" name="email-provider">
+              <option value="self">직접입력</option>
+              <option value="naver.com">@naver.com</option>
+              <option value="gmail.com">@gmail.com</option>
+              <option value="daum.net">@daum.net</option>
+              <!-- add more email providers as needed -->
+            </select>
+          </div>
+          <div class="logo-icon">
+            <img src="lock-logo.png">
+            <input type="password" id="password" name="password" placeholder="비밀번호">
+          </div>
+          <div class="logo-icon">
+            <img src="lock-logo.png">
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="비밀번호 확인">
+          </div>
+
+          <div class="logo-icon">
+            <img src="phone-logo.png">
+            <input type="text" id="phone" name="phone" placeholder="휴대폰 번호">
+          </div>
+          <div class="logo-icon">
+            <img src="calendar-logo.png">
+            <input type="date" id="date-of-birth" name="date-of-birth" placeholder="생년월일">
+          </div>
+          <select id="gender" name="gender">
+            <option value="">성별 선택</option>
+            <option value="male">남성</option>
+            <option value="female">여성</option>
+            <option value="other">기타</option>
+          </select>
+          <div class="tnc">
+            <div class="tnc-control">
+              <input type="checkbox" id="agree-tnc" name="agree-tnc">
+              <label for="agree-tnc">약관에 동의합니다.</label>
+            </div>
+          </div>
+          <button class="tnc-button" onclick="toggleTnCContent()">약관 내용 보기</button>
+          <div id="tnc-content" class="tnc-content">
+            <!-- Your terms and conditions content -->
+            약관 내용이 여기에 채워집니다.
+            약관 내용이 여기에 채워집니다.
+            약관 내용이 여기에 채워집니다.
+            약관 내용이 여기에 채워집니다.
+            약관 내용이 여기에 채워집니다.
+            약관 내용이 여기에 채워집니다.
+            약관 내용이 여기에 채워집니다.
+            약관 내용이 여기에 채워집니다.
+          </div>
+          <button class="enter-button" onclick="handleSignUp()">회원가입</button>
+        </div>
+        <div class="links">
+          <a href="login.html">로그인 페이지로 가기</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      &copy; 2023 Nova
+    </div>
+  </div>
+</body>
+
+</html>

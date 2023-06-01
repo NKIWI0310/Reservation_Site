@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 1080px;
+      background-color: #f0f0f0;
+      max-width: 1920px;
+      margin: 0 auto;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .menu-bar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu-bar li {
+      list-style: none;
+    }
+
+    .menu-bar a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .profile-area {
+      position: relative;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-area h1 {
+      z-index: 10;
+      position: relative;
+      color: #333;
+      font-size: 40px;
+      margin-bottom: 70px;
+    }
+
+    .info-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+      width: 30%;
+      padding: 50px;
+      border-radius: 15px;
+      background-color: #fff;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-area p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .button {
+      width: 95px;
+      height: auto;
+      padding: 10px;
+      margin: auto;
+      display: inline-block;
+      cursor: pointer;
+      color: #fff;
+      background-color: #000000;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      margin-right: 10px;
+    }
+
+    .button:last-child {
+      margin-right: 0;
+    }
+
+    .button:hover {
+      background-color: rgb(73, 73, 73);
+    }
+
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .info-display {
+      display: none;
+    }
+
+    .form-display {
+      display: none;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <img src="logo.png" alt="Logo">
+      </div>
+      <ul class="menu-bar">
+        <li><a href="#">Menu 1</a></li>
+        <li><a href="#">Menu 2</a></li>
+        <li><a href="#">Menu 3</a></li>
+        <li><a href="#">Menu 4</a></li>
+      </ul>
+    </div>
+    <div class="profile-area">
+      <h1>My Page</h1>
+      <div class="info-area">
+        <div class="button-container">
+          <button class="button" onclick="toggleProfileInfo()">회원정보 보기</button>
+          <button class="button" onclick="toggleEditProfileForm()">회원정보 수정</button>
+          <button class="button" onclick="togglePasswordChange()">비밀정보 변경</button>
+          <button class="button" onclick="toggleReservationInfo()">예약정보 확인</button>
+        </div>
+        <div id="infoDisplay" class="info-display">
+          <p id="username"></p>
+          <p id="email"></p>
+          <p id="gender"></p>
+          <p id="dob"></p>
+          <p id="phone"></p>
+        </div>
+        <form id="editProfileForm" class="form-display" onsubmit="handleEditProfile(event)">
+          <label for="newUsername">Username:</label><br>
+          <input type="text" id="newUsername" name="newUsername"><br>
+          <label for="newEmail">Email:</label><br>
+          <input type="email" id="newEmail" name="newEmail"><br>
+          <label for="newGender">Gender:</label><br>
+          <select id="newGender" name="newGender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select><br>
+          <label for="newDob">Date of Birth:</label><br>
+          <input type="date" id="newDob" name="newDob"><br>
+          <label for="newPhone">Phone:</label><br>
+          <input type="tel" id="newPhone" name="newPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            placeholder="Format: 123-456-7890" required><br>
+          <input type="submit" value="Submit">
+        </form>
+        <form id="passwordChangeForm" class="form-display" onsubmit="handlePasswordChange(event)">
+          <label for="currentPassword">Current Password:</label><br>
+          <input type="password" id="currentPassword" name="currentPassword"><br>
+          <label for="newPassword">New Password:</label><br>
+          <input type="password" id="newPassword" name="newPassword"><br>
+          <label for="confirmNewPassword">Confirm New Password:</label><br>
+          <input type="password" id="confirmNewPassword" name="confirmNewPassword"><br>
+          <input type="submit" value="Change Password">
+        </form>
+        <div id="reservationDisplay" class="info-display">
+          <p id="restaurant"></p>
+          <p id="reservationDate"></p>
+          <button class="button" onclick="toggleReservationInfo()">돌아가기</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      &copy; 2023 Nova
+    </div>
+  </div>
+  <script>
+    function toggleProfileInfo() {
+      var infoDisplay = document.getElementById('infoDisplay');
+      var form = document.getElementById('editProfileForm');
+      var passwordChangeForm = document.getElementById('passwordChangeForm');
+      var reservationDisplay = document.getElementById('reservationDisplay');
+
+      if (infoDisplay.style.display === 'none') {
+        infoDisplay.style.display = 'block';
+        form.style.display = 'none';
+        passwordChangeForm.style.display = 'none';
+        reservationDisplay.style.display = 'none';
+      } else {
+        infoDisplay.style.display = 'none';
+        form.style.display = 'none';
+        passwordChangeForm.style.display = 'none';
+        reservationDisplay.style.display = 'none';
+      }
+    }
+
+    function toggleEditProfileForm() {
+      var form = document.getElementById('editProfileForm');
+      var infoDisplay = document.getElementById('infoDisplay');
+      var reservationDisplay = document.getElementById('reservationDisplay');
+      var passwordChangeForm = document.getElementById('passwordChangeForm');
+
+      if (form.style.display === 'none') {
+        form.style.display = 'block';
+        infoDisplay.style.display = 'none';
+        reservationDisplay.style.display = 'none';
+        passwordChangeForm.style.display = 'none';
+      } else {
+        form.style.display = 'none';
+        infoDisplay.style.display = 'block';
+        reservationDisplay.style.display = 'none';
+        passwordChangeForm.style.display = 'none';
+      }
+    }
+
+    function handleEditProfile(event) {
+      event.preventDefault();
+
+      var newUsername = document.getElementById('newUsername').value;
+      var newEmail = document.getElementById('newEmail').value;
+      var newGender = document.getElementById('newGender').value;
+      var newDob = document.getElementById('newDob').value;
+      var newPhone = document.getElementById('newPhone').value;
+
+      if (newUsername) {
+        localStorage.setItem('username', newUsername);
+        document.getElementById('username').innerText = 'Username: ' + newUsername;
+      }
+
+      if (newEmail) {
+        localStorage.setItem('email', newEmail);
+        document.getElementById('email').innerText = 'Email: ' + newEmail;
+      }
+
+      if (newGender) {
+        localStorage.setItem('gender', newGender);
+        document.getElementById('gender').innerText = 'Gender: ' + newGender;
+      }
+
+      if (newDob) {
+        localStorage.setItem('date-of-birth', newDob);
+        document.getElementById('dob').innerText = 'Date of Birth: ' + newDob;
+      }
+
+      if (newPhone) {
+        localStorage.setItem('phone', newPhone);
+        document.getElementById('phone').innerText = 'Phone: ' + newPhone;
+      }
+
+      toggleEditProfileForm();
+    }
+
+    function togglePasswordChange() {
+      var passwordChangeForm = document.getElementById('passwordChangeForm');
+      var infoDisplay = document.getElementById('infoDisplay');
+      var form = document.getElementById('editProfileForm');
+      var reservationDisplay = document.getElementById('reservationDisplay');
+
+      if (passwordChangeForm.style.display === 'none') {
+        passwordChangeForm.style.display = 'block';
+        infoDisplay.style.display = 'none';
+        form.style.display = 'none';
+        reservationDisplay.style.display = 'none';
+      } else {
+        passwordChangeForm.style.display = 'none';
+        infoDisplay.style.display = 'block';
+        form.style.display = 'none';
+        reservationDisplay.style.display = 'none';
+      }
+    }
+
+    function handlePasswordChange(event) {
+      event.preventDefault();
+
+      var currentPassword = document.getElementById('currentPassword').value;
+      var newPassword = document.getElementById('newPassword').value;
+      var confirmNewPassword = document.getElementById('confirmNewPassword').value;
+
+      if (currentPassword && newPassword && confirmNewPassword) {
+        if (newPassword !== confirmNewPassword) {
+          alert('New password and confirm password do not match.');
+          return;
+        }
+
+        // Password change logic goes here
+
+        alert('Password changed successfully.');
+      }
+
+      togglePasswordChange();
+    }
+
+    function toggleReservationInfo() {
+      var reservationDisplay = document.getElementById('reservationDisplay');
+      var infoDisplay = document.getElementById('infoDisplay');
+      var form = document.getElementById('editProfileForm');
+      var passwordChangeForm = document.getElementById('passwordChangeForm');
+
+      if (reservationDisplay.style.display === 'none') {
+        reservationDisplay.style.display = 'block';
+        infoDisplay.style.display = 'none';
+        form.style.display = 'none';
+        passwordChangeForm.style.display = 'none';
+      } else {
+        reservationDisplay.style.display = 'none';
+        infoDisplay.style.display = 'block';
+        form.style.display = 'none';
+        passwordChangeForm.style.display = 'none';
+      }
+    }
+
+    document.getElementById('username').innerText = 'Username: ' + localStorage.getItem('username');
+    document.getElementById('email').innerText = 'Email: ' + localStorage.getItem('email');
+    document.getElementById('gender').innerText = 'Gender: ' + localStorage.getItem('gender');
+    document.getElementById('dob').innerText = 'Date of Birth: ' + localStorage.getItem('date-of-birth');
+    document.getElementById('restaurant').innerText = 'Restaurant: ' + localStorage.getItem('restaurant');
+    document.getElementById('reservationDate').innerText = 'Reservation Date: ' + localStorage.getItem('reservation-date');
+    document.getElementById('phone').innerText = 'Phone: ' + localStorage.getItem('phone');
+
+    // trigger display toggle initially to show info display and hide form
+    toggleProfileInfo();
+  </script>
+</body>
+
+</html>

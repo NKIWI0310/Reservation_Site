@@ -8,7 +8,7 @@ body {
   width: 100vw; /* viewport width */
   height: 100vh; /* viewport height */
   max-width: 1920px; /* max viewport width */
-  max-height: 1080px; /* max viewport height */
+  max-height: 2080px; /* max viewport height */
   margin: auto; /* center the container if the viewport is larger than 1920x1080 */
   position: relative; /* set the context for the absolutely positioned children */
 }
@@ -62,16 +62,33 @@ body {
   width: 102px;
 }
 
-.top-20 { top: 20px; }
-.top-50 { top: 50px; }
-.top-70 { top: 70px; }
-.top-120 { top: 120px; }
-.top-170 { top: 170px; }
-.top-230 { top: 230px; }
-.top-280 { top: 280px; }
-.top-300 { top: 300px; }
-.top-835 { top: 835px; }
-
+.top-20 {
+  top: 20px;
+}
+.top-50 {
+  top: 50px;
+}
+.top-70 {
+  top: 70px;
+}
+.top-120 {
+  top: 120px;
+}
+.top-170 {
+  top: 170px;
+}
+.top-230 {
+  top: 230px;
+}
+.top-280 {
+  top: 280px;
+}
+.top-300 {
+  top: 300px;
+}
+.top-835 {
+  top: 835px;
+}
 
 .main_photo {
   width: 1300px;

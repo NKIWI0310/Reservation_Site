@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 1080px;
+      background-color: #f0f0f0;
+      max-width: 1920px;
+      margin: 0 auto;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    .menu-bar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu-bar li {
+      list-style: none;
+    }
+
+    .menu-bar a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .login-area {
+      position: relative;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-area h1 {
+      z-index: 10;
+      position: relative;
+      color: #333;
+      font-size: 40px;
+      margin-bottom: 70px;
+    }
+
+    .login-area::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 45%;
+      background-color: pink;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+      position: relative;
+      width: 50%;
+      height: 50%;
+      padding: 50px;
+      border-radius: 15px;
+      background-color: #fff;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .top-section {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 10px;
+    }
+
+    .credentials {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 7;
+      gap: 10px;
+    }
+
+    .credentials input {
+      width: 90%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .remember {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    .enter-button {
+      flex-grow: 3;
+      width: auto;
+      height: auto;
+      padding: 0px;
+      cursor: pointer;
+      color: #fff;
+      background-color: #000000;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .enter-button:hover {
+      background-color: rgb(73, 73, 73);
+    }
+
+    .bottom-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: 20px;
+    }
+
+    .social-login {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 20px;
+    }
+
+    .social-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 20px;
+    }
+
+    .social-login li {
+      list-style: none;
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+
+    .social-login a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #333;
+      transition: box-shadow 0.3s;
+      width: 90%;
+    }
+
+    .social-login a:hover {
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .google-login a {
+      background-color: #DD4B39;
+    }
+
+    .naver-login a {
+      background-color: #1EC800;
+    }
+
+    .facebook-login a {
+      background-color: #4267B2;
+    }
+
+    .kakao-login a {
+      background-color: #FFDE00;
+    }
+
+    .logo-img {
+      height: 30px;
+      width: auto;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .links a {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
+    let auth2; // Google Auth2 객체를 전역 변수로 선언
+    function start() {
+      gapi.load('auth2', function () { // Google API Client 라이브러리가 로드되면 auth2 객체를 초기화
+        auth2 = gapi.auth2.init({
+          client_id: 'YOUR_GOOGLE_CLIENT_ID', // 여기에 실제 Google 클라이언트 ID를 넣으세요
+        });
+      });
+    }
+    function handleLogin() {
+      var id = document.getElementById('id').value;
+      var password = document.getElementById('password').value;
+      var rememberMe = document.getElementById('remember').checked;
+
+      if (id === "nova" && password === "1234") {
+        if (rememberMe) {
+          localStorage.setItem('userId', id);
+        } else {
+          localStorage.removeItem('userId');
+        }
+        alert("Nova님 환영합니다!");
+        window.location.href = "login.html";
+      } else {
+        alert("잘못된 ID 또는 비밀번호입니다.");
+      }
+    }
+
+    function checkRememberedUser() {
+      var rememberedId = localStorage.getItem('userId');
+      if (rememberedId) {
+        document.getElementById('id').value = rememberedId;
+        document.getElementById('remember').checked = true;
+      }
+    }
+    function signInWithGoogle() {
+      auth2.signIn().then(function (googleUser) {
+        // Google 로그인이 성공하면 사용자의 기본 프로필 정보를 가져옵니다.
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId());
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail());
+      }, function (error) {
+        // Google 로그인이 실패하면 에러 메시지를 콘솔에 출력합니다.
+        console.log(error);
+      });
+    }
+    function signInWithNaver() {
+      // 네이버 로그인 API를 사용하여 네이버 로그인 처리를 수행합니다.
+      // 구현 방법은 네이버 개발자 문서를 참고하시기 바랍니다.
+      // 이 부분은 실제 네이버 로그인 API와의 통신 코드로 구현되어야 합니다.
+    }
+    function signInWithFacebook() {
+      // Facebook 로그인 API를 사용하여 Facebook 로그인 처리를 수행합니다.
+      // 구현 방법은 Facebook 개발자 문서를 참고하시기 바랍니다.
+      // 이 부분은 실제 Facebook 로그인 API와의 통신 코드로 구현되어야 합니다.
+    }
+    function signInWithKakao() {
+      // 카카오 로그인 API를 사용하여 카카오 로그인 처리를 수행합니다.
+      // 구현 방법은 카카오 개발자 문서를 참고하시기 바랍니다.
+      // 이 부분은 실제 카카오 로그인 API와의 통신 코드로 구현되어야 합니다.
+    }
+  </script>
+</head>
+
+<body onload="checkRememberedUser(); start();">
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <img src="logo.png" alt="Logo">
+      </div>
+      <ul class="menu-bar">
+        <li><a href="#">Menu 1</a></li>
+        <li><a href="#">Menu 2</a></li>
+        <li><a href="#">Menu 3</a></li>
+        <li><a href="#">Menu 4</a></li>
+      </ul>
+    </div>
+    <div class="login-area">
+      <h1>로그인</h1>
+      <div class="login-form">
+        <div class="top-section">
+          <div class="credentials">
+            <input type="text" id="id" name="id" placeholder="id">
+            <input type="password" id="password" name="password" placeholder="Password">
+          </div>
+          <input type="button" value="Enter" class="enter-button" onclick="handleLogin()">
+        </div>
+        <div class="remember">
+          <input type="checkbox" id="remember" name="remember">
+          <label for="remember">아이디 기억하기</label>
+        </div>
+        <div class="bottom-section">
+          <div class="social-login">
+            <ul class="social-row">
+              <li class="google-login">
+                <a href="google.com" onclick="signInWithGoogle()">
+                  <img src="google.png" class="logo-img"> Google로 로그인하기
+                </a>
+              </li>
+              <li class="naver-login">
+                <a href="naver.com" onclick="signInWithNaver()">
+                  <img src="naver.png" class="logo-img"> Naver로 로그인하기
+                </a>
+              </li>
+            </ul>
+            <ul class="social-row">
+              <li class="facebook-login">
+                <a href="facebook.com" onclick="signInWithFacebook()">
+                  <img src="facebook.png" class="logo-img"> Facebook으로 로그인하기
+                </a>
+              </li>
+              <li class="kakao-login">
+                <a href="kakao.com" onclick="signInWithKakao()">
+                  <img src="kakao.png" class="logo-img"> Kakao로 로그인하기
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="links">
+            <a href="#">아이디 찾기 |</a>
+            <a href="#">비밀번호 찾기 |</a>
+            <a href="signup.html">회원가입</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      &copy; 2023 Nova
+    </div>
+  </div>
+</body>
+
+</html>
