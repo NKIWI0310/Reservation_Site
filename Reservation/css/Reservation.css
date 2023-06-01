@@ -143,6 +143,52 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.reserve_bar {
+  width: 1000px;
+  height: 116px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  position: absolute;
+  top: 150px;
+  left: 150px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 1);
+  border-radius: 30px;
+  padding-left: 100px; /* 원하는 값을 설정해 주세요. */
+}
+
+.personpicker{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  left : 350px;
+  background-image: url("../images/person.png");
+}
+
+#personCount {
+  position: relative;
+  left: 50px;
+  height: 40px;
+}
+
+.datepicker{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-image: url("../images/v9_176.png");
+}
+
+#datetimepicker{
+  position: relative;
+  left : 60px;
+  height : 40px;
+
+}
+
+
+
 .restaurant-name {
   width: 340px;
   top: 46px;
@@ -167,17 +213,6 @@ body {
   font-size: 15px;
 }
 
-.reserve_bar {
-  width: 1000px;
-  height: 116px;
-  background: rgba(255, 255, 255, 0.5);
-  opacity: 1;
-  position: absolute;
-  top: 150px;
-  left: 150px;
-  border: 1px solid rgba(0, 0, 0, 1);
-  border-radius: 30px;
-}
 
 .photo_list {
   width: 1000px;
@@ -252,12 +287,6 @@ body {
   border-radius: 0;
 }
 
-#personCount {
-  position: relative;
-  left: 350px;
-  height: 40px;
-  bottom: 10px;
-}
 
 #datepickerWrapper {
   position: relative;

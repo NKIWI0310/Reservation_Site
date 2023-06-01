@@ -6,10 +6,14 @@
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <link href="./css/Reservation.css" rel="stylesheet" />
-    <link href="./css/Navbar.css" rel = "stylesheet"/>
+    <link href="./css/Navbar.css" rel="stylesheet" />
     <script src="Selector.js"></script>
     <script src="navbar.js"></script>
     <title>Document</title>
@@ -20,22 +24,24 @@
         <span class="reserve_message">예약하기</span>
 
         <div class="main_photo">
-            <div class="common-style icon-style bg-image" ></div> <!-- 아이콘 -->
-            <div class="common-style panel-style" ></div>
+            <div class="common-style icon-style bg-image"></div> <!-- 아이콘 -->
+            <div class="common-style panel-style"></div>
             <span class="common-style color-black font-noto restaurant-name">단성무이</span>
-            <div class="common-style image-panel bg-image" style="background-image: url('./images/Reservation1/단성무이카드.png');"></div>
+            <div class="common-style image-panel bg-image"
+                style="background-image: url('./images/Reservation1/단성무이카드.png');"></div>
             <span class="common-style color-black font-noto description">청주 충북대학교 맛집 감성 술집 나베가 맛있음 ㅇㅇ </span>
         </div>
 
         <div class="main_content">
             <span class="common-large top-50">예약일시</span>
             <div class="reserve_bar">
-                <div id="datepickerWrapper">
-                    <input id="calendar">
+                <div class="datepicker">
+                  <input id="datetimepicker">
                 </div>
-
-                <select id="personCount"></select>
-            </div>
+                <div class="personpicker">
+                  <select id="personCount"></select>
+                </div>
+              </div>
 
             <span class="common-large top-300">상세정보</span>
             <div class="common-style container-style border-style reservation-container">

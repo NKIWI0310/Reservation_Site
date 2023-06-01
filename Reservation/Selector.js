@@ -1,11 +1,9 @@
 $(function () {
-  $("#calendar").datepicker({
-    showOn: "both", // showOn 속성을 "both"로 설정
-    buttonImage: "./images/v9_176.png",
-    buttonImageOnly: true, // buttonImageOnly를 true로 설정하면 아이콘만 보임
+  $("#datetimepicker").datetimepicker({
+    format: "Y-m-d H:i",
   });
 
-  $(".ui-datepicker-trigger").insertAfter("#calendar");
+  $(".ui-datepicker-trigger").insertAfter("#datetimepicker3");
   for (var i = 1; i <= 20; i++) {
     $("#personCount").append(new Option(i, i));
   }

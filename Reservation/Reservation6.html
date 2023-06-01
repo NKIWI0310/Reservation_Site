@@ -7,6 +7,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" media="screen"
+    href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
 
     <link href="./css/Reservation.css" rel="stylesheet" />
     <link href="./css/Navbar.css" rel = "stylesheet"/>
@@ -30,12 +34,13 @@
         <div class="main_content">
             <span class="common-large top-50">예약일시</span>
             <div class="reserve_bar">
-                <div id="datepickerWrapper">
-                    <input id="calendar">
+                <div class="datepicker">
+                  <input id="datetimepicker">
                 </div>
-
-                <select id="personCount"></select>
-            </div>
+                <div class="personpicker">
+                  <select id="personCount"></select>
+                </div>
+              </div>
 
             <span class="common-large top-300">상세정보</span>
             <div class="common-style container-style border-style reservation-container">
