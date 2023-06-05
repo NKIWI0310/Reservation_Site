@@ -93,7 +93,6 @@ body {
 .main_photo {
   width: 1300px;
   height: 371px;
-  background: url("../images/v9_145.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -170,7 +169,7 @@ body {
 #personCount {
   position: relative;
   left: 50px;
-  height: 40px;
+  height: 50px;
 }
 
 .datepicker{
@@ -183,7 +182,7 @@ body {
 #datetimepicker{
   position: relative;
   left : 60px;
-  height : 40px;
+  height : 50px;
 
 }
 
