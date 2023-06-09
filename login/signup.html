@@ -3,16 +3,18 @@
 
 <head>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
+      font-family: 'Nunito Sans', sans-serif;
+      background-color: #f8f8f8;
     }
 
     .container {
       display: flex;
       flex-direction: column;
       height: 1080px;
-      background-color: #f0f0f0;
+      background-color: #e6e6e6;
       max-width: 1920px;
       margin: 0 auto;
     }
@@ -21,12 +23,8 @@
       display: flex;
       justify-content: space-between;
       padding: 30px;
-      background-color: #333;
+      background-color: #455a64;
       color: #fff;
-    }
-
-    .logo img {
-      height: 50px;
     }
 
     .menu-bar {
@@ -41,6 +39,7 @@
     .menu-bar a {
       color: #fff;
       text-decoration: none;
+      font-size: 18px;
     }
 
     .signup-area {
@@ -50,14 +49,16 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 20px;
     }
 
     .signup-area h1 {
       z-index: 10;
       position: relative;
-      color: #333;
-      font-size: 40px;
+      color: #ffffff;
+      font-size: 50px;
       margin-bottom: 70px;
+      font-weight: bold;
     }
 
     .signup-area::before {
@@ -66,8 +67,8 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 25%;
-      background-color: pink;
+      height: 45%;
+      background-image: url('background.jpg');
       background-repeat: no-repeat;
       background-size: cover;
     }
@@ -223,16 +224,27 @@
       height: 20px;
     }
   </style>
+    <link rel="stylesheet" type="text/css" href="/MainPage/Main base.css">
+    <link rel="stylesheet" type="text/css" href="/MainPage/Main detail.css">
+    <link rel="stylesheet" type="text/css" href="/MainPage/Main layout.css">
   <script>
     function handleSignUp() {
+     
+
       var username = document.getElementById('username').value;
+      localStorage.setItem("username", username);
       var password = document.getElementById('password').value;
+      localStorage.setItem("password", password);
       var confirmPassword = document.getElementById('confirm-password').value;
       var email = document.getElementById('email').value;
       var emailDomain = document.getElementById('email-provider').value;
+      localStorage.setItem("email", email + emailDomain);
       var gender = document.getElementById('gender').value;
+      localStorage.setItem("gender", gender);
       var dateOfBirth = document.getElementById('date-of-birth').value;
+      localStorage.setItem("date-of-birth'", dateOfBirth);
       var agreeTnC = document.getElementById('agree-tnc').checked;
+
 
       if (username === "" || password === "" || confirmPassword === "" || email === "" || emailDomain === "" || gender === "" || dateOfBirth === "") {
         alert("모든 필드를 채워주세요.");
@@ -244,30 +256,23 @@
         alert("회원가입이 완료되었습니다!");
         window.location.href = "login.html";
       }
+
+
     }
 
     function toggleTnCContent() {
       var tncContentDiv = document.getElementById("tnc-content");
       tncContentDiv.classList.toggle("visible");
     }
+
+
   </script>
 </head>
 
 <body>
   <div class="container">
-    <div class="header">
-      <div class="logo">
-        <img src="logo.png" alt="Logo">
-      </div>
-      <ul class="menu-bar">
-        <li><a href="#">Menu 1</a></li>
-        <li><a href="#">Menu 2</a></li>
-        <li><a href="#">Menu 3</a></li>
-        <li><a href="#">Menu 4</a></li>
-      </ul>
-    </div>
     <div class="signup-area">
-      <h1>회원가입</h1>
+      <h1 style="font-family: 'Noto Sans'">회원가입</h1>
       <div class="signup-form">
         <div class="form-section">
           <div class="logo-icon">
@@ -335,10 +340,61 @@
         </div>
       </div>
     </div>
-    <div class="footer">
-      &copy; 2023 Nova
+  <!-- footer  이곳 부터는 풋터-->
+  <footer id="foot">
+    <!--<div id="quick">
+      <button type="button" class="ico">TOP</button>
     </div>
+    -->
+    <nav>
+      <menu class="gnbFoot">
+        <li>
+          <h3>Nova</h3>
+          <menu>
+        <li><a href="https://software.cbnu.ac.kr/">---</a></li>
+  
+      </menu>
+      </li>
+      <li>
+        <h3>For Guests</h3>
+        <menu>
+      <li><a href="list.html" >---</a></li>
+  
+      </menu>
+      </li>
+      <li>
+        <h3>Member</h3>
+        <menu>
+      <li><a href="mypage.html" >---</a></li>
+        </menu>
+      </li>
+      </menu>
+    </nav>
+    <section>
+      <h1><figure><img src="/MainPage/logo11.png" alt="RESTAURANT SYSTEM(假)"><figcaption>---</figcaption></figure></h1>
+      <address>
+        <dl class="contact">
+          <dt>대표번호</dt>
+          <dd>xxx-xxxx-xxxx</dd>
+          <dt>이메일 문의</dt>
+          <dd><a href="japan.html">xxxxxxx@xxxxxx</a></dd>
+        </dl>
+        <dl class="addr">
+          <dt class="blind">법인명</dt>
+          <dd>NOVA</dd>
+          <dt class="blind">주소</dt>
+          <dd>충청북도 청주시 서원구 개신동 12</dd>
+          <dt>대표이사</dt>
+          <dd>이동민</dd>
+          <dt>충북대학교 소재지</dt>
+          <dd>28644 충북 청주시 서원구 충대로 1 충북대학교</dd>
+        </dl>
+        <p>COPYRIGHT 2023 NOVA CO., LTD. NOVA ALL RIGHTS RESERVED.</p>
+      </address>
+    </section>
+  </footer>
   </div>
+
 </body>
 
 </html>

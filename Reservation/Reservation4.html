@@ -6,20 +6,60 @@
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" type="text/css" media="screen"
-    href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
-<script
-    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <link href="./css/Reservation.css" rel="stylesheet" />
-    <link href="./css/Navbar.css" rel = "stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/MainPage/Main layout.css">
     <script src="Selector.js"></script>
     <script src="navbar.js"></script>
     <title>Document</title>
+    <style>
+        @charset "utf-8";
+        * {margin:0; padding:0; box-sizing:border-box;}
+        :before, :after {box-sizing:border-box;}
+        #head {
+            display: flex;
+            justify-content :end;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- 여기 부터 배너다 -->
+    <section id="head">
+        <nav class="gnbArea" style=" display: table-cell; display:block;">
+            <menu id="gnb">
+                <li style="list-style:none;">
+                    <a href="/List/list.html"
+                        style="text-decoration:none; cursor:pointer; transition:color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.1s linear 0s !important;">식당</a>
+                </li>
+                <li>
+                    <a href="/List/list.html"
+                        style="text-decoration:none; cursor:pointer; transition:color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.1s linear 0s !important;">식당
+                        예약</a>
+                </li>
+                <li>
+                    <a href="/Login/mypage.html"
+                        style="text-decoration:none; cursor:pointer; transition:color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.1s linear 0s !important;">마이
+                        페이지</a>
+                </li>
+                <li>
+                    <a href="/Login/login.html"
+                        style="text-decoration:none; cursor:pointer; transition:color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.1s linear 0s !important;">로그인</a>
+                </li>
+                <li>
+                    <a href="/MainPage/Mainpage.html"
+                        style="text-decoration:none; cursor:pointer; transition:color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.1s linear 0s !important;">메인페이지</a>
+                </li>
+            </menu>
+        </nav>
+        </div>
+    </section>
     <div class="main">
         <span class="reserve_message">예약하기</span>
 

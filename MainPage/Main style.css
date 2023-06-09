@@ -1,0 +1,257 @@
+@charset "utf-8";
+
+
+
+section > h2 {margin-bottom:28px; font-size:36px; color:#333; line-height:48px; /*letter-spacing:0;*/ text-align:center;}
+h2, h3, h4, h5, h6 {color:#333;}
+h3 {font-size:20px;}
+h4, h5 {font-size:18px;}
+h6 {font-size:16px;}
+h5.em01, h6.em01 {font-size:14px; line-height:22px;}
+h5.em02, h6.em02 {font-size:15px; line-height:18px;}
+h5.em03, h6.em03 {font-weight:500;}
+h5.em04, h6.em04 {font-size:16px; line-height:24px;}
+h4.em05, h5.em05, h6.em05 {font-weight:400;}
+
+#contents > section > .subtxt, #contents > div > section > .subtxt {margin-bottom:55px; font-size:14px; font-weight:400; text-align:center;}
+#contents > section > h3, #contents > div:not(.location):not(.searchArea) > section > h3 {margin:45px 0 40px 0; font-size:52px; text-align:center;}
+#contents > section:first-of-type > h3 {margin-top:0; padding-top:45px;}
+#contents > section h3 + .subtxt, #contents > div > section h3 + .subtxt, #contents > section .btnL.print + .subtxt, #contents > div > section .btnL.print + .subtxt {margin-top:-28px;}
+#contents > section h4 + div.subtxt {margin:4px 0 25px 0;}
+#contents > section h4 + div.subtxt + hr {margin-top:36px;}
+
+p.error {margin-top:5px; font-family:"Noto Sans KR"; font-size:12px; font-weight:500; text-align:left; color:#e07b46;}
+.bookCont p.error {font-size:14px; line-height:22px;}
+
+p.result {margin:57px 0 20px 0;}
+p.result strong {font-weight:700; color:#6c7594;}
+
+p.or {position:relative; color:#6c7594; text-align:center;}
+p.or:before {position:absolute; top:50%; width:100%; margin-top:2px; border-top:1px dashed #6c7594; display:block; content:"";}
+p.or em, p.or span {position:relative; background-color:#fff;}
+p.or em {padding-left:1px; color:#6c7594 !important;}
+
+.label {min-width:100px; height:22px; padding:0 5px; font-size:11px; color:#6c7594; line-height:20px; text-align:center; border:1px solid #6c7594; background:#fff; vertical-align:middle; display:inline-block;}
+.label.st01 {min-width:auto; padding:0 8px;}
+
+
+em.line01, a.line01 {font-weight:700; color:#6c7594; text-decoration:underline;}
+em.line02, a.line02 {border-bottom:1px solid #fff; display:inline-block;}
+
+figure mark {position:absolute;}
+
+
+
+
+/* 타이틀 구분선
+------------------------------------------------------------------------------- */
+.lineL:before, .lineR:before {position:absolute; left:0px; top:50%; width:1px; height:12px; margin-top:-6px; background-color:#ddd; padding-left:0px; display:inline-block; content:""; z-index:5;}
+.lineR:before {right:0px; left:auto;}
+span.lineL, span.lineR {position:relative; display:block;}
+
+
+
+
+/* 아이콘
+------------------------------------------------------------------------------- */
+@font-face {font-family:"icomoon"; src:url('/assets/global/font/icomoon.eot'); src:url('/assets/global/font/icomoon.eot?#iefix') format('embedded-opentype'), url('/assets/global/font/icomoon.woff') format('woff'), url('/assets/global/font/icomoon.ttf') format('truetype'), url('/assets/global/font/icomoon.svg#icomoon') format('svg'); font-weight:normal; font-style:normal;}
+
+.ico {font-size:0; background:none; background-position:50% 50%; background-repeat:no-repeat; vertical-align:middle; display:inline-block;}
+button.ico {overflow:hidden;}
+
+.ico.naverPost {width:16px; height:28px; background-image:url(sns_naverPost01.png);}
+
+
+
+/* 글자 앞 아이콘 */
+.icon:before {border-radius:50%; background-position:50% 50%; background-repeat:no-repeat; display:inline-block; content:"";}
+.icon.st01 {font-weight:500; color:#333;}
+.icon.st01:before {width:18px; height:18px; margin-right:6px; background-color:#6c7594; vertical-align:-4px;}
+
+a.icon.st01.plus {color:#333;}
+.icon.st01.plus:before {display:none;}
+.icon.st01.plus:after {width:18px; height:18px; border-radius:99px; -webkit-border-radius:99px; -moz-border-radius:99px; -ms-border-radius:99px; -o-border-radius:99px; background-color:#6c7594; background-position:50% 50%; background-repeat:no-repeat; vertical-align:top; display:inline-block; content:"";}
+
+p.icon.st01 {padding-left:24px; text-indent:-24px;}
+p.icon.st01 > span {margin-left:14px; padding-left:16px; font-weight:400; color:#666;}
+
+.icon.st02 {font-size:12px; color:#666; font-weight:500; text-align:center;}
+.icon.st02:before {width:36px; height:36px; margin:0 auto 4px auto; display:block;}
+
+
+.icon.st02.em01 {color:#fff;}
+.icon.st02.em01:before {margin:0 10px 0 0; background-position:0 50%; vertical-align:middle; display:inline-block;}
+
+.icon.st02.em02:before {width:52px; height:38px; margin-bottom:11px; border-radius:0;}
+
+.icon.st02.em03 {font-size:16px; font-weight:700; color:#333;}
+.icon.st02.em03:before {width:110px; height:110px; margin-bottom:14px; background-color:#333;}
+
+
+.icon.st03 {position:relative; padding-left:70px; font-size:20px; color:#333; line-height:24px; font-weight:700;}
+.icon.st03:before {position:absolute; top:50%; left:0; width:50px; height:50px; margin-top:-25px; vertical-align:middle; display:inline-block;}
+
+
+/* 글자 뒤 아이콘 */
+.ic {display:inline-block;}
+.ic:after {background-position:50% 50%; background-repeat:no-repeat; display:inline-block; content:"";}
+.ic.st01:after {margin:auto; display:block;}
+.ic.st01 h5 {margin-bottom:20px;}
+.ic.st02 {font-size:17px; line-height:22px; border-bottom:1px solid #666;}
+
+/* 모양 */
+.blt:before {display:block; content:"";}
+.blt.line01 {position:relative;}
+
+.blt.line02:before {width:1px; height:40px; margin:0 auto 27px auto; background:#333;}
+
+
+/* 버튼
+------------------------------------------------------------------------------- */
+button, .btn {font-family:"Noto Sans KR"; font-size:16px; color:#fff; font-weight:500; text-align:center; border:1px solid transparent; background:none; vertical-align:middle;}
+a.btn {color:#fff; vertical-align:middle; display:inline-block;}
+.btn > span, a.btn.em:before, a.btn.em:after {vertical-align:middle; display:inline-block;}
+a.btn.em:before, a.btn.em:after {height:100%; content:"";}
+a.btn.em {line-height:18px !important;}
+a.btn.em > span {line-height:18px;}
+
+.btn.base {height:45px; padding:0 20px; border-radius:0; background:#534e4b;}
+a.btn.base {line-height:43px;}
+.btn.base.st01 {height:60px;}
+a.btn.base.st01 {line-height:58px;}
+.btn.base.st02 {height:40px; font-size:14px; font-weight:400;}
+a.btn.base.st02 {line-height:38px;}
+
+.btn.base.st05 {min-width:147px; height:50px; color:#fff;}
+a.btn.base.st05 {line-height:48px;}
+
+
+
+
+
+.btn.sns.naver {background-color:#1ec800;}
+
+
+
+.btn.round.st01 {height:30px; padding:0 12px; font-size:14px; border-radius:9px;}
+
+
+
+
+.btn.em01 {background:#6c7594;}
+.btn.em02 {background:#333 !important;}
+.btn.em03 {font-weight:700 !important;}
+.btn.em04 {background:#bababa;}
+.btn.em05 {color:#333 !important; border:1px solid #333 !important; background:none;}
+.btn.st10.em05 {border-width:2px !important;}
+.btn.st02.em05:hover, .btn.st10.em05:hover {color:#fff !important; background:#333 !important;}
+.btn.em06 {border-color:#ccc;}
+.btn.em07 {color:#666; border:1px solid #ddd; background:none;}
+.btn.em08 {border-color:rgba(102,102,102,0.50) !important;}
+.btn.em09 {font-size:14px; font-weight:400 !important;}
+.btn.em10 {font-size:0;}
+.btn.em11 {background:#666 !important;}
+.btn.em12 {width:100% !important;}
+.btn.em13 {color:#666; border:1px solid #999; background:none;}
+.btn.em14 {font-weight:500;}
+.btn.em15 {background:#474e61;}
+.btn.em16 {font-size:18px;}
+.btn.em17 {font-size:20px;}
+.btn.em18 {background:#989898 !important;}
+.btn.em19 {background:#fff !important;}
+.btn.em20 {color:#333 !important;}
+
+.btn[disabled] {opacity:0.5; cursor:default;}
+
+
+
+
+/* 사진 위 내용 얘도 건들면 안댐*/
+ol.pic:after {clear:both; display:block; content:"";}
+ol.pic > li {float:left;}
+ol.pic figure {position:relative;}
+ol.pic figcaption {color:#fff; /*transition:all, linear 0.3s;*/}
+ol.pic figcaption:not(.table) {position:absolute; top:0; left:0; width:100%; height:100%; font-size:0; line-height:0; display:block;}
+ol.pic figcaption > .table {position:relative; height:100%; text-align:center;}
+ol.pic figcaption.table {padding:10px; text-align:center; background:rgba(108,117,148,0.95); /*transition:all, linear 0.3s;*/}
+ol.pic figcaption.table > * {border:1px solid transparent;}
+
+ol.pic figure:hover figcaption {font-size:14px; line-height:22px;}
+ol.pic figure:hover figcaption.table {position:relative;}
+ol.pic.st01 figcaption h3 {font-size:34px; color:#fff; line-height:42px;}
+ol.pic.st01 figcaption h4, ol.pic.st01 figcaption h6 {font-size:0;}
+ol.pic.st01 figcaption p + span {height:0; display:block; opacity:0;}
+ol.pic.st01 figcaption .btnC {height:0; margin:0; opacity:0;}
+ol.pic.st01 figcaption .table:after {position:absolute; top:10px; left:10px; width:calc(100% - 20px); height:calc(100% - 20px); border:1px solid rgba(255,255,255,0.30); display:block; content:""; opacity:0; transition:all, linear 0.3s;}
+ol.pic.st01 figcaption:not(:hover) .table > span {display:none;}
+ol.pic.st01 figcaption:not(:hover) .table > div {width:100%;}
+ol.pic.st01 figcaption:hover h3, .dining.overview ol.pic.st01 figcaption h5 {font-size:24px; line-height:32px;}
+ol.pic.st01 figcaption:hover h4 {margin-bottom:13px; font-size:18px; color:#fff;}
+ol.pic.st01 figcaption:hover h6 {margin-bottom:17px; font-size:16px; color:#fff;}
+ol.pic.st01 figcaption:hover h4:before, ol.pic.st01 figcaption:hover h6:before, ol.pic.st01.em02 figcaption h4:before {width:1px; height:30px; margin:15px auto; background:#fff; display:block; content:"";}
+ol.pic.st01 figcaption:hover h6:before {margin:23px auto 20px auto;}
+ol.pic.st01 figcaption:hover p + span {height:auto; margin-top:45px; opacity:1;}
+ol.pic.st01 figcaption:hover .btnC {height:40px; margin-top:30px; opacity:1;}
+ol.pic.st01 figcaption:hover .btnC .btn {position:relative; min-width:106px; z-index:5;}
+ol.pic.st01 figcaption:hover .table {background:rgba(108,117,148,0.95); z-index:10;}
+ol.pic.st01 figcaption:hover .table:after {opacity:1;}
+ol.pic.st01 figcaption.st01:hover {height:calc(200% + 10px);}
+ol.pic.st01 figcaption.st02:hover {top:auto; bottom:0; height:auto;}
+ol.pic.st01 figcaption.st03:hover {width:calc(200% + 10px);}
+ol.pic.st01 figcaption.st04:hover {left:auto; right:0;}
+ol.pic.st01 figcaption.st05:hover h4:before, ol.pic.st01 figcaption.st05:hover h6:before {height:25px; margin:0; background:none;}
+ol.pic.st01.em01 figcaption:hover {font-size:16px; line-height:24px;}
+ol.pic.st01.em01 figcaption:hover .btnC {height:40px; margin-top:36px; opacity:1;}
+ol.pic.st01.em01 figcaption:hover .btnC .btn {min-width:auto;}
+ol.pic.st01.em01 figcaption:hover .table {background:rgba(0,0,0,0.10);}
+ol.pic.st01.em01 figcaption:hover .table:after {border-color:rgba(255,255,255,0.50);}
+ol.pic.st01.em02 figcaption h4 {margin-bottom:13px; font-size:14px; font-weight:400; color:#fff;}
+ol.pic.st01.em02 figcaption h4:before {margin:8px auto 30px auto;}
+ol.pic.st01.em02 figcaption h5 {margin-bottom:25px; font-size:18px; color:#fff;}
+ol.pic.st02 {margin-left:-20px;}
+ol.pic.st02 > li {float:left; margin-left:20px;}
+ol.pic.st02 > li:nth-child(4n+1) {clear:both;}
+ol.pic.st02 figure {height:370px; overflow:hidden;}
+ol.pic.st02 figcaption {height:370px; margin-top:-370px;}
+ol.pic.st02 figcaption div > *:not(mark) {opacity:0;}
+ol.pic.st02 figcaption h4 {font-size:24px; color:#fff; line-height:30px;}
+ol.pic.st02 figcaption h4 + .btnC {margin-top:38px;}
+ol.pic.st02 figcaption dl:before {width:1px; height:20px; margin:0 auto 20px auto; background:#fff; display:block; content:"";}
+ol.pic.st02 figcaption dl dt {margin-top:9px; font-weight:700;}
+ol.pic.st02 figcaption dl + .btnC {margin-top:35px;}
+ol.pic.st02 figure:not(:hover) figcaption mark {top:30px; left:0; height:40px; padding:0 20px; line-height:40px; z-index:10;}
+ol.pic.st02 figure:hover figcaption div {border-color:rgba(255,255,255,0.30);}
+ol.pic.st02 figure:hover figcaption div > * {opacity:1;}
+ol.pic.st02 figure:hover figcaption mark {position:static; margin-bottom:4px; background:none !important;}
+
+
+
+/* 표형태 지우면 안댐
+------------------------------------------------------------------------------- */
+.table {width:100%; display:table;}
+.table:not(.row) > * {vertical-align:middle; display:table-cell;}
+.table:not(.row).st01 > * {vertical-align:top;}
+.table:not(.row).st02 > * {vertical-align:bottom;}
+.table:not(.row).st03 > * {width:50%;}
+.table:not(.row).st04 {width:auto;}
+.table:not(.row).st05 {margin-right:auto; margin-left:auto;}
+.table.row {width:auto;}
+.table.row > * {display:table-row;}
+.table > span {line-height:0;}
+figure.table + figure.table {margin-top:30px;}
+figure.thumb.table > figcaption {width:500px; padding:0 50px;}
+
+
+
+
+/* 제목영역
+------------------------------------------------------------------------------- */
+/* 더보기 포함 */
+.hgroup.more, h4.line {padding-bottom:20px; border-bottom:2px solid #333;}
+.hgroup.more {align-items:center; display:flex;}
+.hgroup.more > *:last-child {margin-left:auto;}
+.hgroup.more h4, h4.line {font-size:24px; line-height:38px;}
+.hgroup.more .ico.detail {margin-left:30px;}
+.hgroup.more p {color:#333;}
+
+

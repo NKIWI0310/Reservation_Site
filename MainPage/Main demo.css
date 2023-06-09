@@ -3,8 +3,6 @@
 .clearfix:before, .clearfix:after { content: " "; display: table; }
 .clearfix:after { clear: both; }
 
-
-
 .container{
   width: 760px;
   margin: 100px auto 50px;
@@ -74,9 +72,6 @@ footer.footer{
   padding: 50px 0px 20px;
   border-top:1px solid #eee;
 }
-
-
-/* Required */
 
 .hidden{
   opacity: 0;

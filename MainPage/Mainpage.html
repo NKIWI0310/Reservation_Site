@@ -1,0 +1,285 @@
+<!doctype html>
+<html xml:lang="ko" lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>우리들의....</title>
+
+  <link rel="stylesheet" type="text/css" href="Main%20layout.css">
+  <link rel="stylesheet" type="text/css" href="Main%20base.css">
+  <link rel="stylesheet" type="text/css" href="Main%20demo.css">
+  <link rel="stylesheet" type="text/css" href="Main%20detail.css">
+  <link rel="stylesheet" type="text/css" href="Main%20style.css">
+  <link rel="stylesheet" type="text/css" href="d3.css">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <!-- 상단 -->
+    <header class="headArea">
+      <!-- 여기 부터 배너다 -->
+      <section id="head">
+        <h1><span><a href="Main.html"></a></span></h1>
+        <nav class="gnbArea">
+          <menu id="gnb">
+            <li>
+              <a href="/List/list.html">식당</a>
+            </li>
+            <li>
+              <a href="/List/list.html">식당 예약</a>
+            </li>
+            <li>
+              <a href="/Login/mypage.html">마이 페이지</a>
+            </li>
+            <li>
+              <a href="/Login/login.html">로그인</a>
+            </li>
+          </menu>
+        </nav>
+  </div>
+  </section>
+  </header>
+  <!-- 여기 부터 메뉴 -->
+  <main id="container" class="main">
+    <section class="visual">
+      <ol class="slide">
+        <li>
+          <a href="/List/list.html" target="_self">
+            <figure>
+              <span><img src="https://cdn.pixabay.com/photo/2020/09/09/02/12/smearing-5556288_960_720.jpg" alt=""
+                  onerror="$(this).css('height', '980px');"></span>
+              <figcaption>
+                <dl class="table">
+                  <dd>
+                    <h3>Welcome to our page!</h3>
+                    <p>추천 식당 리스트<br>2023. 6. 1. (목) ~ 2023. 8. 31. (목)</p>
+                  </dd>
+                </dl>
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+      </ol>
+    </section>
+    <!-- 식당 -->
+    <section class="eat photo">
+      <div class="hgroup">
+        <h2><em>where to</em> EAT</h2>
+        <p>We will help you<br> a special experience.</p>
+      </div>
+      <ol class="slide">
+        <li>
+          <ol class="pic st01 em01">
+            <li>
+              <a href="/book/Dining">
+                <figure>
+                  <span><img src="idx_eatWalkerhill.jpg" alt="example"></span>
+                  <figcaption>
+                    <div class="table">
+                      <div>
+                        <h3>Drink<br> Bar</h3>
+                        <h4>단성 무이</h4>
+                        <p>Feel like<br> Hongkong</p>
+                        <div class="btnC">
+                          <button type="button" class="btn base st02 em02 more">바로가기</button>
+                        </div>
+                      </div>
+                    </div>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+            <li>
+              <a href="/List/list.html" target="_blank">
+                <figure>
+                  <span><img src="6008001.jpg" alt="dd"></span>
+                  <figcaption>
+                    <div class="table">
+                      <div>
+                        <h3>More</h3>
+                        <h4>Checking the restaurants</h4>
+                        <div class="btnC">
+                          <button type="button" class="btn base st02 em02 more">바로가기</button>
+                        </div>
+                      </div>
+                    </div>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+            <li>
+              <a href="/Reservation/Reservation3.html">
+                <figure>
+                  <span><img src="maki.jpg" alt="sushi"></span>
+                  <figcaption>
+                    <div class="table">
+                      <div>
+                        <h3>Sushi</h3>
+                        <h4>초밥</h4>
+                        <p>짚신<br> 스시</p>
+                        <div class="btnC">
+                          <button type="button" class="btn base st02 em02 more">바로가기</button>
+                        </div>
+                      </div>
+                    </div>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </section>
+    <!-- 식당 -->
+    <section class="membership">
+      <div>
+        <div class="hgroup">
+          <h2>Where to<br> &nbsp&nbsp&nbsp GO?</h2>
+          <p class="blt line01">지금 레스토랑 예약 서비스의<br> 회원이 되시고, 편리한 기능을<br> 사용해 보세요.</p>
+        </div>
+        <div class="prestige">
+          <h3>Join Membership</h3>
+          <p>기능 사용을 위해<br> 회원가입을 해보세요.</p>
+          <div class="btnL">
+            <a href="/Login/login.html" class="btn base st02 em04 more">바로가기</a>
+          </div>
+          <p class="note st05">Google Map</p>
+        </div>
+      </div>
+      <div class="rewards">
+        <figure>
+          <figcaption>
+            <h3>Make reservation</h3>
+            <p>아래의 버튼을 클릭하여<br>기능을 사용해 보세요.</p>
+            <div class="btnL">
+              <a href="/List/list.html" class="btn base st02 em02 more"
+                onclick="gaEvent('워커힐 허브_PC_메인', '멤버십', '워커힐 리워즈_상세페이지');">바로가기</a>
+            </div>
+          </figcaption>
+          <span><img src="restaurant1.jpg" alt="reservation"></span>
+        </figure>
+      </div>
+    </section>
+    <section class="social">
+      <h2>Editor's Recommend</h2>
+      <div style="display: flex; justify-content: center;">
+        <svg id="chart" width="500" height="400"> </svg>
+        <script>
+          var data = [2, 4, 8, 10];
+          var labels = ['단성무이', '짚신 스시', '이런이궈', '현고들깨칼국수'];
+      
+          var svg = d3.select("#chart"),
+            width = svg.attr("width"),
+            height = svg.attr("height"),
+            radius = Math.min(width, height) / 2,
+            g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+      
+          var color = d3.scaleOrdinal(['#4daf4a', '#377eb8', '#ff7f00', '#984ea3', '#e41a1c']);
+      
+          // Generate the pie
+          var pie = d3.pie();
+      
+          // Generate the arcs
+          var arc = d3.arc()
+            .innerRadius(0)
+            .outerRadius(radius);
+      
+          // Generate groups
+          var arcs = g.selectAll("arc")
+            .data(pie(data))
+            .enter()
+            .append("g")
+            .attr("class", "arc");
+      
+          // Draw arc paths
+          arcs.append("path")
+            .attr("fill", function (d, i) {
+              return color(i);
+            })
+            .attr("d", arc);
+      
+          // Add labels
+          arcs.append("text")
+            .attr("transform", function (d) {
+              var centroid = arc.centroid(d);
+              return "translate(" + centroid[0] + "," + centroid[1] + ")";
+            })
+            .attr("dy", "0.35em")
+            .text(function (d, i) {
+              return labels[i];
+            })
+            .style("text-anchor", "middle")
+            .style("font-size", "12px");
+        </script>
+      </div>
+      
+      
+    </section>
+    
+    
+    
+
+
+  </main>
+  <!-- footer  이곳 부터는 풋터-->
+  <footer id="foot">
+    <!--<div id="quick">
+    <button type="button" class="ico">TOP</button>
+  </div>
+  -->
+    <nav>
+      <menu class="gnbFoot">
+        <li>
+          <h3>Nova</h3>
+          <menu>
+        <li><a href="https://software.cbnu.ac.kr/">---</a></li>
+
+      </menu>
+      </li>
+      <li>
+        <h3>For Guests</h3>
+        <menu>
+      <li><a href="list.html">---</a></li>
+
+      </menu>
+      </li>
+      <li>
+        <h3>Member</h3>
+        <menu>
+      <li><a href="mypage.html">---</a></li>
+      </menu>
+      </li>
+      </menu>
+    </nav>
+    <section>
+      <h1>
+        <figure><img src="logo11.png" alt="RESTAURANT SYSTEM(假)">
+          <figcaption>---</figcaption>
+        </figure>
+      </h1>
+      <address>
+        <dl class="contact">
+          <dt>대표번호</dt>
+          <dd>xxx-xxxx-xxxx</dd>
+          <dt>이메일 문의</dt>
+          <dd><a href="japan.html">xxxxxxx@xxxxxx</a></dd>
+        </dl>
+        <dl class="addr">
+          <dt class="blind">법인명</dt>
+          <dd>NOVA</dd>
+          <dt class="blind">주소</dt>
+          <dd>충청북도 청주시 서원구 개신동 12</dd>
+          <dt>대표이사</dt>
+          <dd>이동민</dd>
+          <dt>충북대학교 소재지</dt>
+          <dd>28644 충북 청주시 서원구 충대로 1 충북대학교</dd>
+        </dl>
+        <p>COPYRIGHT 2023 NOVA CO., LTD. NOVA ALL RIGHTS RESERVED.</p>
+      </address>
+    </section>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+@charset "utf-8";
+* {margin:0; padding:0; border:0 none transparent; box-sizing:border-box;}
+
+:before, :after {box-sizing:border-box;}
+html, body, pre {font-family:"Noto Sans KR", sans-serif; font-size:14px; line-height:22px; color:#666; font-weight:400; letter-spacing:-0.03em; /*-webkit-text-size-adjust:100%;*/}
+form, fieldset, p, figure {word-break:normal; word-wrap:break-word;}
+legend, caption, figcaption {display:none;}
+img, fieldset {/*'transparent' for Opera7*/}
+menu, ol, ul, li, dl, dt, dd {list-style:none;}
+menu, ol, ul, dl, dt {display:block;}
+table {width:100%; border-collapse:collapse;}
+table th, table td {color:#666; vertical-align:top; word-break:normal; word-wrap:break-word;}
+input, select, textarea, button {font-family:"Noto Sans KR", sans-serif; font-size:14px; color:#666; font-weight:400; vertical-align:middle;}
+textarea {resize:none;}
+button, label {cursor:pointer;}
+button::-moz-focus-inner {padding:0; border:0;}
+a {text-decoration:none; cursor:pointer; transition:color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.1s linear 0s !important;}
+a:hover, a:active {color:#333;}
+h1, h2, h3, h4, h5, h6 {line-height:1; word-break:normal; word-wrap:break-word;}
+h1, h2, h3, h4, h5, h6, strong, th {font-weight:700;}
+address, em, i {font-style:normal;}
+hr {border-top:1px solid #e5e9ec;}
+figure > span {line-height:0; display:block;}
+figure.caption figcaption {display:block;}
+*:focus {outline:none;}
+.fit {display:flex; overflow:hidden;}
+.fit img {width:100%; height:100%; object-fit:cover;}
+
+.fl {float:left !important;}
+.fr {float:right !important;}
+.fn {float:none !important;}
+.clr {clear:both;}
+
+.tl {text-align:left !important;}
+.tr {text-align:right !important;}
+.tc {text-align:center !important;}
+
+.vt {vertical-align:top;}
+.vb {vertical-align:bottom;}
+.vm, .btns {vertical-align:middle;}
+
+.nobg {background:none !important;}
+.nobd {border:0 none !important;}
+.nobl {border-left:0 none !important;}
+.nobt {border-top:0 none !important;}
+.nomg {margin:0 !important;}
+.nomt {margin-top:0 !important;}
+.nomb {margin-bottom:0 !important;}
+.noml {margin-left:0 !important;}
+.nopdt {padding-top:0 !important;}
+.nopd {padding:0 !important;}
+.nopb {padding-bottom:0 !important;}
+.nopl {padding-left:0 !important;}
+.nodp {display:none;}
+.blind, .hide {position:absolute !important; width:0 !important; height:0 !important; font-size:0; line-height:0; visibility:hidden; overflow:hidden;}
+
+.btnL {margin-top:20px; text-align:left;}
+.btnL .btn:not(:last-child), .btnL a:not(:last-child) {margin-right:3px;}
+.btnL.half .btn {margin:0;}
+.btnL.half .btn:only-child {width:100%;}
+.btnL.half .btn:not(:only-child) {width:calc(50% - 2.5px) !important;}
+.btnL.half .btn:nth-child(odd) {clear:both;}
+.btnL.half .btn:nth-child(even) {float:right;}
+.btnL.half.st01 .btn:not(:first-child):not(:nth-child(2)) {margin-top:10px;}
+.btnL.half.st01 .btn:last-child:not(:nth-child(even)) {width:100%;}
+.btnR {margin-top:20px; text-align:right;}
+.btnR .btn:not(:first-child), .btnR a:not(:first-child) {margin-left:3px;}
+.btnR.pgNext {float:right; margin-top:-30px;}
+.btnR.fr:first-child {margin-top:0;}
+.btnC {margin-top:40px; text-align:center;}
+.btnC .btn, .btnC a {margin:0 1.5px;}
+.btnC .btn:first-child, .btnC a:first-child {margin-left:0;}
+.btnC .btn:last-child, .btnC a:last-child {margin-right:0;}
+.btnC .fr {margin-right:0;}
+.btnC.full .btn {width:100%; margin:0;}
+.btnC.full .btn + .btn {margin-top:5px;}
+
+.btnTop {margin-bottom:8px;}
+.btnMid {margin-top:20px; margin-bottom:60px;}
+.btnBtm {margin-top:30px !important;}
+
+.tblTop {margin-bottom:20px;}
+.tblMid {margin-bottom:40px;}
+.tblBtm {margin-top:10px;}
+
+.tabBtm {margin-top:40px;}
+
+.pgMid {margin-top:30px; margin-bottom:30px;}
+.pgBtm {margin-top:50px;}
+
+.autoImg {overflow:hidden;}
+
+::-webkit-input-placeholder {color:#aaa;}
+:-moz-placeholder {color:#aaa; opacity:1;}
+::-moz-placeholder {color:#aaa; opacity:1;}
+:-ms-input-placeholder {color:#aaa !important;}
+::-ms-input-placeholder {color:#aaa;}
+.placeholder {color:#aaa !important;}

@@ -1,0 +1,126 @@
+@charset "utf-8";
+/* 전체틀
+------------------------------------------------------------------------------- */
+html, body {min-width:1640px; overflow-x:hidden;}
+#wrapper, #head {min-width:1200px; width:100%;}
+#wrapper {position:relative;}
+html.noScroll, body.noScroll, #wrapper.noScroll {/*height:100vh;*/ overflow-y:hidden;}
+@media screen and (max-width:1640px) {
+  html, body {overflow-x:auto;}
+}
+/* 상단
+------------------------------------------------------------------------------- */
+header {position:absolute; width:100%;}
+#head {position:fixed; width:100%; height:90px; z-index:200; transition:all, linear 0.3s;}
+#head h1, .gnbArea {height:90px;}
+#head h1 {float:left; margin-left:100px; display:table;}
+#head h1 span {vertical-align:middle; display:table-cell;}
+#head h1 span a {width:147px; height:30px; text-indent:-9999px; background:url(logo1.png) 0 50% no-repeat; display:block; transition:all, linear 0.3s;}
+.gnbArea {float:right; padding:0 65px; background:rgba(51,51,51,0.80);}
+.gnbArea a {color:#fff; font-weight:500;}
+#gnb, #head .etc {float:left; height:90px; display:table;}
+#gnb > li, #head .etc > li {padding:0 22px; vertical-align:middle; display:table-cell;}
+#gnb > li > a {font-size:18px;}
+#gnb > li > a:after {margin-left:10px; width:12px; height:8px; vertical-align:2px; display:inline-block; content:""; transition:background-position 0.1s linear;}
+#gnb > li > a:hover:after, #gnb > li.on > a:after {background-position:0 100%;}
+#gnb > li.store > a:after {display:none;}
+#gnb > li.on:after {height:1px; margin:5px 0 -6px 0; background:#fff; display:block; content:"";}
+#head .etc .lang {position:relative;}
+#head .etc .lang ul {position:absolute; top:90px; left:-15px; width:88px; text-align:center; background:rgba(51,51,51,0.80);}
+#head .etc .lang ul li {padding:6px 5px 12px 5px;}
+#head .etc .lang ul li:hover {background:#444;}
+
+
+
+#head .etc > li .ico.chat {margin-top:8px;}
+#head .lang > a:after {height:3px; background:#fff; display:block; content:"";}
+#head.fix, #head.on {border-bottom:1px solid #ededed; background:#fff;}
+#head.fix {top:0;}
+
+#head.fix .gnbArea, #head.on .gnbArea, #head.fix .etc .lang ul {background:#333;}
+#head.fix.down, #head.fix.down h1, #head.fix.down .gnbArea, #head.fix.down #gnb, #head.fix.down .etc {height:70px;}
+#head.fix.down .gnbSub, #head.fix.down .etc .lang ul {top:70px;}
+@media only screen and (max-width:1280px) {
+  #head h1 {margin-left:40px;}
+  .gnbArea {padding:0 25px;}
+}
+
+
+/* 내용
+------------------------------------------------------------------------------- */
+#contents > section, #contents > div:not(.searchArea):not(.location) > section, .sectionBg > section {position:relative; width:1000px; margin:0 auto; padding-top:50px; padding-bottom:50px;}
+#wrapper.book #contents > section, #wrapper.book #contents > div:not(.searchArea):not(.location) > section, #wrapper.book .sectionBg > section {width:1400px; padding-top:180px;}
+#contents > section:first-of-type, #contents > div:first-of-type > section:first-of-type {padding-top:0;}
+#contents:not(.bg):not(.rewards) > section:last-of-type, #contents:not(.bg) > div:not(.sectionBg):not(.location) > section:last-child, #contents:not(.bg) > .sectionBg:last-child {padding-bottom:160px;}
+/*#contents:not(.bg) > section:first-of-type,*/ #contents:not(.bg) > div:not(:last-child) > section:first-of-type, #contents:not(.bg) > .sectionBg:first-of-type, #contents:not(.bg) > h3 + section:not(:last-child) {padding-bottom:50px !important;}
+#contents > .sectionBg:last-child > section {padding-bottom:0 !important;}
+#contents .sectionBg {position:relative; background:#f7f7f7;}
+#contents .sectionBg.st01, #contents.bg.st01 {background:#fafafa;}
+#contents .sectionBg.st02, #contents.bg.st02 {background:#e3e8e9;}
+#contents .sectionBg.st03, #contents.bg.st03 {background:#e6ebec;}
+#contents .sectionBg.st04, #contents.bg.st04 {background:#fff;}
+#contents .sectionBg.st05, #contents.bg.st05 {background:#fbfbfb;}
+#contents .sectionBg.st06, #contents.bg.st06 {background:#ddd;}
+#contents.bg {padding-bottom:160px; background:#f7f7f7;}
+#contents.bg > section {padding-left:80px; padding-right:80px; border:1px solid #e8e8e8; border-top:0 none; background:#fff;}
+#contents.bg .tabMenu {width:calc(100% + 162px); margin:0 -81px;}
+#contArea {position:relative;}
+.contArea {padding:0 80px 60px 80px !important; border:1px solid #e8e8e8; background:#fff;}
+
+/* 하단
+------------------------------------------------------------------------------- */
+#foot {position:relative; background:#14151d;}
+#foot nav, #foot > section, #foot div menu.gnbFoot, #foot > div ul {width:1200px; margin:0 auto; display:table;}
+#foot nav menu.gnbFoot > li, #foot section > *, #foot > div ul li {vertical-align:top; display:table-cell;}
+#foot nav {padding:0 0 41px 550px; display:block;}
+#foot nav menu.gnbFoot > li:not(:last-child) {width:200px;}
+#foot nav menu.gnbFoot > li:before {width:1px; height:30px; margin-bottom:54px; background:rgba(255,255,255,0.30); display:block; content:"";}
+#foot nav h3 {margin-bottom:14px; font-size:14px; color:#ccc; font-weight:500; letter-spacing:0;}
+#foot nav a {color:#999; font-weight:500;}
+#foot nav menu menu li {margin-top:6px;}
+#foot nav .about {margin-top:48px;}
+#foot nav .about > li {margin-right:16px; display:inline-block;}
+#foot nav .about > li:first-child a {color:#bbb; font-weight:700;}
+#foot section h1 {position:relative; width:400px; padding-top:6px; text-align:center;}
+#foot section h1:after {position:absolute; left:50%; bottom:0; width:300px; height:9px; margin-left:-150px; background:rgba(255,255,255,0.20); display:block; content:"";}
+#foot address {padding:0 0 76px 150px; font-size:12px; color:#555;}
+#foot address:before {height:1px; margin-bottom:36px; background:#3f4046; display:block; content:"";}
+#foot address aside {float:right; padding-top:2px;}
+#foot address aside figure {display:table;}
+#foot address aside figure > * {vertical-align:middle; display:table-cell;}
+#foot address aside figure:not(:first-of-type) {margin-top:18px;}
+#foot address aside figure span {width:43px; padding-right:10px; text-align:center;}
+#foot address aside figure figcaption {font-size:11px; line-height:15px; color:rgba(255,255,255,0.60); text-align:left;}
+#foot address aside figure figcaption strong {font-weight:700;}
+#foot address aside figure:first-of-type span img {width:33px;}
+#foot address aside figure:nth-of-type(2) span img {width:24px;}
+#foot address aside figure:nth-of-type(5) span img {width:37px;}
+#foot address aside figure:nth-of-type(6) span img {width:31px;}
+#foot address aside figure figcaption dl dt {margin-right:4px; font-weight:700;}
+#foot address dl.contact {height:auto; margin-bottom:23px; color:#999; overflow:hidden;}
+#foot address dl.contact > dt {clear:both; float:left; margin-right:10px; font-weight:700;}
+#foot address dl.contact > dd {font-size:18px;}
+#foot address dl.contact > dt:not(:first-of-type), #foot address dl.contact > dd:not(:first-of-type) {margin-top:4px;}
+#foot address dl.contact a {color:#999;}
+#foot address dl.addr {clear:both; height:auto; overflow:hidden;}
+#foot address dl.addr dt, #foot section address dl.addr dd:not(:nth-of-type(2)):not(:nth-of-type(3)) {float:left; display:block;}
+#foot address dl.addr dt:not(:nth-of-type(5)) {clear:both;}
+#foot address dl.addr dd:not(:first-of-type) {padding-left:6px;}
+#foot address dl.addr dd:nth-of-type(2):before, #foot address dl.addr dd:nth-of-type(3):before, #foot address dl.addr dt:nth-of-type(5):before {width:1px; height:10px; margin:0 10px; background:#5b5c61; vertical-align:-1px; display:inline-block; content:"";}
+#foot address p {margin-top:18px;}
+#foot div.link {float:right; margin:-42px -22px;}
+#foot div.link .select2 {width:165px !important;}
+#foot > div {border-top:1px solid #2c2d34; border-bottom:1px solid #2a2b32;}
+#foot > div ul li {height:149px; vertical-align:middle; opacity:0.5;}
+#foot > div ul li:not(:last-child) {padding-right:100px;}
+#foot > div ul li:last-child {text-align:right;}
+
+#quick {position:fixed; bottom:50px; right:40px; width:60px; border:0 none !important; z-index:100;}
+#quick button {width:62px; height:61px; background: linear-gradient(to bottom, #66ff66 0%, #ffffcc 100%);}
+#quick button:hover {background-position:0 0;}
+#quick.off {position:absolute; top:-110px; bottom:auto;}
+
+
+
+
+
