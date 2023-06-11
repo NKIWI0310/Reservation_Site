@@ -3,8 +3,10 @@
 
 <head>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;700&display=swap');
+
     body {
-      font-family: "Helvetica Neue", sans-serif;
+      font-family: "Noto sans", sans-serif;
       background-color: #e6e6e6;
     }
 
@@ -81,7 +83,7 @@
       width: 40%;
       height: 100%;
       padding: 50px;
-      border-radius: 15px;
+      border-radius: 20px;
       background-color: #fff;
       box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     }
@@ -99,12 +101,17 @@
       padding: 10px 20px;
       cursor: pointer;
       color: #fff;
-      background-color: #999191;
+      background-color: #777;
       border: none;
-      border-radius: 5px;
+      border-radius: 20px;
       transition: background-color 0.3s;
       font-size: 18px;
       font-weight: bold;
+      outline: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 80ms ease-in;
     }
 
     .button:last-child {
@@ -112,7 +119,7 @@
     }
 
     .button:hover {
-      background-color: rgb(73, 73, 73);
+      background-color: #333;
     }
 
     .footer {
@@ -128,12 +135,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: #fafafa;
-      width: 80%;
+      width: 70%;
       height: 100%;
       padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-top: 20px;
+      background-color: #fff;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+      border: 2px solid #dddddd;
     }
 
     .info-display p {
@@ -218,30 +227,30 @@
 </head>
 
 <body>
-    <!-- 여기 부터 배너다 -->
-    <section id="head">
-      <h1><span><a href="/MainPage/Mainpage.html" ></a></span></h1>
-      <nav class="gnbArea">
-        <menu id="gnb">
-          <li>
-            <a href="/List/list.html">식당</a>
-          </li>
-          <li>
-            <a href="/List/list.html">식당 예약</a>
-          </li>
-          <li>
-            <a href="/Login/mypage.html">마이 페이지</a>
-          </li>
-          <li>
-            <a href="/Login/login.html">로그인</a>
-          </li>
-        </menu>
-      </nav>
-  </div>
+  <!-- 여기 부터 배너다 -->
+  <section id="head">
+    <h1><span><a href="/MainPage/Mainpage.html"></a></span></h1>
+    <nav class="gnbArea">
+      <menu id="gnb">
+        <li>
+          <a href="/List/list.html">식당</a>
+        </li>
+        <li>
+          <a href="/List/list.html">식당 예약</a>
+        </li>
+        <li>
+          <a href="/Login/mypage.html">마이 페이지</a>
+        </li>
+        <li>
+          <a href="/Login/login.html">로그인</a>
+        </li>
+      </menu>
+    </nav>
+    </div>
   </section>
   <div class="container">
     <div class="profile-area">
-      <h1>My Page</h1>
+      <h1>마이페이지</h1>
       <div class="info-area">
         <div class="button-container">
           <button class="button" onclick="toggleProfileInfo()">회원정보 보기</button>
@@ -250,253 +259,257 @@
           <button class="button" onclick="toggleReservationInfo()">예약정보 확인</button>
         </div>
         <div id="infoDisplay" class="info-display">
-          <p><span class="info-label">Username:</span> <span id="username"></span></p>
-          <p><span class="info-label">Email:</span> <span id="email"></span></p>
-          <p><span class="info-label">Gender:</span> <span id="gender"></span></p>
-          <p><span class="info-label">Date of Birth:</span> <span id="dob"></span></p>
-          <p><span class="info-label">Phone:</span> <span id="phone"></span></p>
+          <p><span style="font-family: 'Helvetica Neue', sans-serif; font-weight: bold;" class="info-label">이름:</span> <span id="username"></span></p>
+          <p><span style="font-family: 'Helvetica Neue', sans-serif; font-weight: bold;" class="info-label">이메일:</span> <span id="email"></span></p>
+          <p><span style="font-family: 'Helvetica Neue', sans-serif; font-weight: bold;" class="info-label">성별:</span> <span id="gender"></span></p>
+          <p><span style="font-family: 'Helvetica Neue', sans-serif; font-weight: bold;" class="info-label">생년월일:</span> <span id="dob"></span></p>
+          <p><span style="font-family: 'Helvetica Neue', sans-serif; font-weight: bold;" class="info-label">전화번호:</span> <span id="phone"></span></p>
         </div>
         <form id="editProfileForm" class="form-display" onsubmit="handleEditProfile(event)">
-          <label for="newUsername">Username:</label><br>
+          <label for="newUsername">이름:</label><br>
           <input style="font-family: 'Helvetica Neue', sans-serif; width: 95%;" type="text" id="newUsername"
             name="newUsername"><br>
-          <label for="newEmail">Email:</label><br>
+          <label for="newEmail">이메일:</label><br>
           <input style="font-family: 'Helvetica Neue', sans-serif; width: 95%;" type="email" id="newEmail"
             name="newEmail"><br>
-          <label for="newGender">Gender:</label><br>
+          <label for="newGender">성별:</label><br>
           <select style="font-family: 'Helvetica Neue', sans-serif; width: 95%;" id="newGender" name="newGender">
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
+            <option value="Male">남성</option>
+            <option value="Female">여성</option>
+            <option value="Other">기타</option>
           </select><br>
-          <label for="newDob">Date of Birth:</label><br>
+          <label for="newDob">생년월일:</label><br>
           <input style="font-family: 'Helvetica Neue', sans-serif; width: 95%;" type="date" id="newDob"
             name="newDob"><br>
-          <label for="newPhone">Phone:</label><br>
+          <label for="newPhone">전화번호:</label><br>
           <input style="font-family: 'Helvetica Neue', sans-serif; width: 95%;" type="tel" id="newPhone" name="newPhone"
-            pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="Format: 123-4567-7890" required><br>
-          <input type="submit" value="Submit">
+            pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="010-1234-5678" required><br>
+          <input type="submit" value="회원정보 수정">
         </form>
         <form id="passwordChangeForm" class="form-display" onsubmit="handlePasswordChange(event)">
-          <label for="currentPassword">Current Password:</label><br>
+          <label for="currentPassword">현재 비밀번호:</label><br>
           <input style="font-family: 'Helvetica Neue', sans-serif; width: 95%;" type="password" id="currentPassword"
             name="currentPassword"><br>
-          <label for="newPassword">New Password:</label><br>
+          <label for="newPassword">새 비밀번호:</label><br>
           <input style="font-family: 'Helvetica Neue', sans-serif; width: 95%;" type="password" id="newPassword"
             name="newPassword"><br>
-          <label for="confirmNewPassword">Confirm New Password:</label><br>
+          <label for="confirmNewPassword">새 비밀번호 확인:</label><br>
           <input style="font-family: 'Helvetica Neue', sans-serif; width: 95%;" type="password" id="confirmNewPassword"
             name="confirmNewPassword"><br>
-          <input type="submit" value="Change Password">
+          <input type="submit" value="비밀번호 변경">
         </form>
         <div id="reservationDisplay" class="info-display">
-          <p><span class="info-label">restaurantName:</span> <span id="restaurantName"></span></p>
-          <p><span class="info-label">reservationName:</span> <span id="reservationName"></span></p>
-          <p><span class="info-label">reservationDate:</span> <span id="reservationDate"></span></p>
+          <p><span style="font-family: 'Helvetica Neue', sans-serif; font-weight: bold;" class="info-label" class="info-label">식당명:</span> <span id="restaurantName"></span></p>
+          <p><span style="font-family: 'Helvetica Neue', sans-serif; font-weight: bold;" class="info-label" class="info-label">예약자명:</span> <span id="reservationName"></span></p>
+          <p><span style="font-family: 'Helvetica Neue', sans-serif; font-weight: bold;" class="info-label" class="info-label">예약일:</span> <span id="reservationDate"></span></p>
         </div>
       </div>
-      </div>
-  <!-- footer  이곳 부터는 풋터-->
-  <footer id="foot">
-    <!--<div id="quick">
+    </div>
+    <!-- footer  이곳 부터는 풋터-->
+    <footer id="foot">
+      <!--<div id="quick">
       <button type="button" class="ico">TOP</button>
     </div>
     -->
-    <nav>
-      <menu class="gnbFoot">
-        <li>
-          <h3>Nova</h3>
-          <menu>
-        <li><a href="https://software.cbnu.ac.kr/">---</a></li>
-  
-      </menu>
-      </li>
-      <li>
-        <h3>For Guests</h3>
-        <menu>
-      <li><a href="list.html" >---</a></li>
-  
-      </menu>
-      </li>
-      <li>
-        <h3>Member</h3>
-        <menu>
-      <li><a href="mypage.html" >---</a></li>
+      <nav>
+        <menu class="gnbFoot">
+          <li>
+            <h3>Nova</h3>
+            <menu>
+          <li><a href="https://software.cbnu.ac.kr/">---</a></li>
+
         </menu>
-      </li>
-      </menu>
-    </nav>
-    <section>
-      <h1><figure><img src="/MainPage/logo11.png" alt="RESTAURANT SYSTEM(假)"><figcaption>---</figcaption></figure></h1>
-      <address>
-        <dl class="contact">
-          <dt>대표번호</dt>
-          <dd>xxx-xxxx-xxxx</dd>
-          <dt>이메일 문의</dt>
-          <dd><a href="japan.html">xxxxxxx@xxxxxx</a></dd>
-        </dl>
-        <dl class="addr">
-          <dt class="blind">법인명</dt>
-          <dd>NOVA</dd>
-          <dt class="blind">주소</dt>
-          <dd>충청북도 청주시 서원구 개신동 12</dd>
-          <dt>대표이사</dt>
-          <dd>이동민</dd>
-          <dt>충북대학교 소재지</dt>
-          <dd>28644 충북 청주시 서원구 충대로 1 충북대학교</dd>
-        </dl>
-        <p>COPYRIGHT 2023 NOVA CO., LTD. NOVA ALL RIGHTS RESERVED.</p>
-      </address>
-    </section>
-  </footer>
-    </div>
-    <script>
-      function toggleProfileInfo() {
-        var infoDisplay = document.getElementById('infoDisplay');
-        var form = document.getElementById('editProfileForm');
-        var passwordChangeForm = document.getElementById('passwordChangeForm');
-        var reservationDisplay = document.getElementById('reservationDisplay');
+        </li>
+        <li>
+          <h3>For Guests</h3>
+          <menu>
+        <li><a href="list.html">---</a></li>
 
-        if (infoDisplay.style.display === 'none') {
-          infoDisplay.style.display = 'block';
-          form.style.display = 'none';
-          passwordChangeForm.style.display = 'none';
-          reservationDisplay.style.display = 'none';
-        } else {
-          infoDisplay.style.display = 'none';
-          form.style.display = 'none';
-          passwordChangeForm.style.display = 'none';
-          reservationDisplay.style.display = 'none';
-        }
+        </menu>
+        </li>
+        <li>
+          <h3>Member</h3>
+          <menu>
+        <li><a href="mypage.html">---</a></li>
+        </menu>
+        </li>
+        </menu>
+      </nav>
+      <section>
+        <h1>
+          <figure><img src="/MainPage/logo11.png" alt="RESTAURANT SYSTEM(假)">
+            <figcaption>---</figcaption>
+          </figure>
+        </h1>
+        <address>
+          <dl class="contact">
+            <dt>대표번호</dt>
+            <dd>xxx-xxxx-xxxx</dd>
+            <dt>이메일 문의</dt>
+            <dd><a href="japan.html">xxxxxxx@xxxxxx</a></dd>
+          </dl>
+          <dl class="addr">
+            <dt class="blind">법인명</dt>
+            <dd>NOVA</dd>
+            <dt class="blind">주소</dt>
+            <dd>충청북도 청주시 서원구 개신동 12</dd>
+            <dt>대표이사</dt>
+            <dd>이동민</dd>
+            <dt>충북대학교 소재지</dt>
+            <dd>28644 충북 청주시 서원구 충대로 1 충북대학교</dd>
+          </dl>
+          <p>COPYRIGHT 2023 NOVA CO., LTD. NOVA ALL RIGHTS RESERVED.</p>
+        </address>
+      </section>
+    </footer>
+  </div>
+  <script>
+    function toggleProfileInfo() {
+      var infoDisplay = document.getElementById('infoDisplay');
+      var form = document.getElementById('editProfileForm');
+      var passwordChangeForm = document.getElementById('passwordChangeForm');
+      var reservationDisplay = document.getElementById('reservationDisplay');
+
+      if (infoDisplay.style.display === 'none') {
+        infoDisplay.style.display = 'block';
+        form.style.display = 'none';
+        passwordChangeForm.style.display = 'none';
+        reservationDisplay.style.display = 'none';
+      } else {
+        infoDisplay.style.display = 'none';
+        form.style.display = 'none';
+        passwordChangeForm.style.display = 'none';
+        reservationDisplay.style.display = 'none';
+      }
+    }
+
+    function toggleEditProfileForm() {
+      var form = document.getElementById('editProfileForm');
+      var infoDisplay = document.getElementById('infoDisplay');
+      var reservationDisplay = document.getElementById('reservationDisplay');
+      var passwordChangeForm = document.getElementById('passwordChangeForm');
+
+      if (form.style.display === 'none') {
+        form.style.display = 'block';
+        infoDisplay.style.display = 'none';
+        reservationDisplay.style.display = 'none';
+        passwordChangeForm.style.display = 'none';
+      } else {
+        form.style.display = 'none';
+        infoDisplay.style.display = 'block';
+        reservationDisplay.style.display = 'none';
+        passwordChangeForm.style.display = 'none';
+      }
+    }
+
+    function handleEditProfile(event) {
+      event.preventDefault();
+
+      var newUsername = document.getElementById('newUsername').value;
+      var newEmail = document.getElementById('newEmail').value;
+      var newGender = document.getElementById('newGender').value;
+      var newDob = document.getElementById('newDob').value;
+      var newPhone = document.getElementById('newPhone').value;
+
+      if (newUsername) {
+        localStorage.setItem('username', newUsername);
+        document.getElementById('username').innerText = 'Username: ' + newUsername;
       }
 
-      function toggleEditProfileForm() {
-        var form = document.getElementById('editProfileForm');
-        var infoDisplay = document.getElementById('infoDisplay');
-        var reservationDisplay = document.getElementById('reservationDisplay');
-        var passwordChangeForm = document.getElementById('passwordChangeForm');
-
-        if (form.style.display === 'none') {
-          form.style.display = 'block';
-          infoDisplay.style.display = 'none';
-          reservationDisplay.style.display = 'none';
-          passwordChangeForm.style.display = 'none';
-        } else {
-          form.style.display = 'none';
-          infoDisplay.style.display = 'block';
-          reservationDisplay.style.display = 'none';
-          passwordChangeForm.style.display = 'none';
-        }
+      if (newEmail) {
+        localStorage.setItem('email', newEmail);
+        document.getElementById('email').innerText = 'Email: ' + newEmail;
       }
 
-      function handleEditProfile(event) {
-        event.preventDefault();
-
-        var newUsername = document.getElementById('newUsername').value;
-        var newEmail = document.getElementById('newEmail').value;
-        var newGender = document.getElementById('newGender').value;
-        var newDob = document.getElementById('newDob').value;
-        var newPhone = document.getElementById('newPhone').value;
-
-        if (newUsername) {
-          localStorage.setItem('username', newUsername);
-          document.getElementById('username').innerText = 'Username: ' + newUsername;
-        }
-
-        if (newEmail) {
-          localStorage.setItem('email', newEmail);
-          document.getElementById('email').innerText = 'Email: ' + newEmail;
-        }
-
-        if (newGender) {
-          localStorage.setItem('gender', newGender);
-          document.getElementById('gender').innerText = 'Gender: ' + newGender;
-        }
-
-        if (newDob) {
-          localStorage.setItem('date-of-birth', newDob);
-          document.getElementById('dob').innerText = 'Date of Birth: ' + newDob;
-        }
-
-        if (newPhone) {
-          localStorage.setItem('phone', newPhone);
-          document.getElementById('phone').innerText = 'Phone: ' + newPhone;
-        }
-
-        toggleEditProfileForm();
+      if (newGender) {
+        localStorage.setItem('gender', newGender);
+        document.getElementById('gender').innerText = 'Gender: ' + newGender;
       }
 
-      function togglePasswordChange() {
-        var passwordChangeForm = document.getElementById('passwordChangeForm');
-        var infoDisplay = document.getElementById('infoDisplay');
-        var form = document.getElementById('editProfileForm');
-        var reservationDisplay = document.getElementById('reservationDisplay');
-
-        if (passwordChangeForm.style.display === 'none') {
-          passwordChangeForm.style.display = 'block';
-          infoDisplay.style.display = 'none';
-          form.style.display = 'none';
-          reservationDisplay.style.display = 'none';
-        } else {
-          passwordChangeForm.style.display = 'none';
-          infoDisplay.style.display = 'block';
-          form.style.display = 'none';
-          reservationDisplay.style.display = 'none';
-        }
+      if (newDob) {
+        localStorage.setItem('date-of-birth', newDob);
+        document.getElementById('dob').innerText = 'Date of Birth: ' + newDob;
       }
 
-      function handlePasswordChange(event) {
-        event.preventDefault();
-
-        var currentPassword = document.getElementById('currentPassword').value;
-        var newPassword = document.getElementById('newPassword').value;
-        var confirmNewPassword = document.getElementById('confirmNewPassword').value;
-
-        if (currentPassword && newPassword && confirmNewPassword) {
-          if (newPassword !== confirmNewPassword) {
-            alert('New password and confirm password do not match.');
-            return;
-          }
-
-          // Password change logic goes here
-
-          alert('Password changed successfully.');
-        }
-
-        togglePasswordChange();
+      if (newPhone) {
+        localStorage.setItem('phone', newPhone);
+        document.getElementById('phone').innerText = 'Phone: ' + newPhone;
       }
 
-      function toggleReservationInfo() {
-        var reservationDisplay = document.getElementById('reservationDisplay');
-        var infoDisplay = document.getElementById('infoDisplay');
-        var form = document.getElementById('editProfileForm');
-        var passwordChangeForm = document.getElementById('passwordChangeForm');
+      toggleEditProfileForm();
+    }
 
-        if (reservationDisplay.style.display === 'none') {
-          reservationDisplay.style.display = 'block';
-          infoDisplay.style.display = 'none';
-          form.style.display = 'none';
-          passwordChangeForm.style.display = 'none';
-        } else {
-          reservationDisplay.style.display = 'none';
-          infoDisplay.style.display = 'block';
-          form.style.display = 'none';
-          passwordChangeForm.style.display = 'none';
+    function togglePasswordChange() {
+      var passwordChangeForm = document.getElementById('passwordChangeForm');
+      var infoDisplay = document.getElementById('infoDisplay');
+      var form = document.getElementById('editProfileForm');
+      var reservationDisplay = document.getElementById('reservationDisplay');
+
+      if (passwordChangeForm.style.display === 'none') {
+        passwordChangeForm.style.display = 'block';
+        infoDisplay.style.display = 'none';
+        form.style.display = 'none';
+        reservationDisplay.style.display = 'none';
+      } else {
+        passwordChangeForm.style.display = 'none';
+        infoDisplay.style.display = 'block';
+        form.style.display = 'none';
+        reservationDisplay.style.display = 'none';
+      }
+    }
+
+    function handlePasswordChange(event) {
+      event.preventDefault();
+
+      var currentPassword = document.getElementById('currentPassword').value;
+      var newPassword = document.getElementById('newPassword').value;
+      var confirmNewPassword = document.getElementById('confirmNewPassword').value;
+
+      if (currentPassword && newPassword && confirmNewPassword) {
+        if (newPassword !== confirmNewPassword) {
+          alert('New password and confirm password do not match.');
+          return;
         }
+
+        // Password change logic goes here
+
+        alert('Password changed successfully.');
       }
 
-      document.getElementById('username').innerText = localStorage.getItem('username');
-      document.getElementById('email').innerText = localStorage.getItem('email');
-      document.getElementById('gender').innerText = localStorage.getItem('gender');
-      document.getElementById('dob').innerText = localStorage.getItem('date-of-birth');
-      document.getElementById("restaurantName").innerHTML = localStorage.getItem('restaurantName');
-      document.getElementById("reservationName").innerHTML = "노바맨";
-      document.getElementById("reservationDate").innerHTML = localStorage.getItem('selectedDate');
-      document.getElementById('phone').innerText = localStorage.getItem('phone');
+      togglePasswordChange();
+    }
 
-      // trigger display toggle initially to show info display and hide form
-      toggleProfileInfo();
-    </script>
+    function toggleReservationInfo() {
+      var reservationDisplay = document.getElementById('reservationDisplay');
+      var infoDisplay = document.getElementById('infoDisplay');
+      var form = document.getElementById('editProfileForm');
+      var passwordChangeForm = document.getElementById('passwordChangeForm');
+
+      if (reservationDisplay.style.display === 'none') {
+        reservationDisplay.style.display = 'block';
+        infoDisplay.style.display = 'none';
+        form.style.display = 'none';
+        passwordChangeForm.style.display = 'none';
+      } else {
+        reservationDisplay.style.display = 'none';
+        infoDisplay.style.display = 'block';
+        form.style.display = 'none';
+        passwordChangeForm.style.display = 'none';
+      }
+    }
+
+    document.getElementById('username').innerText = localStorage.getItem('username');
+    document.getElementById('email').innerText = localStorage.getItem('email');
+    document.getElementById('gender').innerText = localStorage.getItem('gender');
+    document.getElementById('dob').innerText = localStorage.getItem('date-of-birth');
+    document.getElementById("restaurantName").innerHTML = localStorage.getItem('restaurantName');
+    document.getElementById("reservationName").innerHTML = "노바맨";
+    document.getElementById("reservationDate").innerHTML = localStorage.getItem('selectedDate');
+    document.getElementById('phone').innerText = localStorage.getItem('phone');
+
+    // trigger display toggle initially to show info display and hide form
+    toggleProfileInfo();
+  </script>
 </body>
 
 </html>

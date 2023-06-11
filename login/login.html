@@ -3,6 +3,8 @@
 
 <head>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;700&display=swap');
+
     body {
       font-family: "Noto sans", sans-serif;
       background-color: #e6e6e6;
@@ -53,8 +55,8 @@
     .login-area h1 {
       z-index: 10;
       position: relative;
-      color: #ffffff;
-      font-size: 50px;
+      color: #fff;
+      font-size: 75px;
       margin-bottom: 70px;
       font-weight: bold;
     }
@@ -79,10 +81,12 @@
       position: relative;
       width: 30%;
       height: 50%;
-      padding: 50px;
-      border-radius: 15px;
+      padding: 30px 50px;
+      border-radius: 20px;
       background-color: #fff;
       box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+      border: 0;
+      outline: none;
     }
 
     .top-section {
@@ -100,10 +104,13 @@
     }
 
     .credentials input {
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ddd;
-      font-size: 18px;
+      padding: 16px;
+      background: #eee;
+      width: 85%;
+      border: 0;
+      outline: none;
+      border-radius: 20px;
+      box-shadow: inset 7px 2px 10px #babebc, inset -5px -5px 12px #fff;
     }
 
     .remember {
@@ -114,22 +121,27 @@
     }
 
     .enter-button {
-      flex-grow: 3;
+      flex-grow: 4;
       width: auto;
       height: auto;
-      padding: 10px 30px;
+      padding: 10px 10px;
       cursor: pointer;
       color: #fff;
-      background-color: #ff5252;
+      background-color: #777;
       border: none;
-      border-radius: 5px;
+      border-radius: 20px;
       transition: background-color 0.3s;
       font-size: 18px;
       font-weight: bold;
+      outline: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 80ms ease-in;
     }
 
     .enter-button:hover {
-      background-color: #e04848;
+      background-color: #333;
     }
 
     .bottom-section {
@@ -153,63 +165,59 @@
     .social-row {
       display: flex;
       justify-content: center;
-      width: 140%;
+      width: 100%;
       gap: 10px;
       margin: 10px 0;
-      border: 1px solid #ddd;
-      /* Add border here */
-      border-radius: 5px;
       padding: 0;
     }
 
     .social-row li {
       display: flex;
-      align-items: center;
       justify-content: center;
-      gap: 5px;
-      background-color: #fff;
-      padding: 5px 10px;
-      transition: background-color 0.3s;
-    }
-
-    .social-row li:hover {
-      background-color: #f8f8f8;
+      width: 100%;
+      height: 130%;
+      margin: 3px 0;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      padding: 4px;
     }
 
     .social-row li a {
       text-decoration: none;
       display: flex;
       align-items: center;
-      color: inherit;
+      color: black;
     }
 
     .social-row li a img {
-      width: 30px;
-      height: 30px;
+      width: 20px;
+      height: 20px;
     }
 
     .social-row li a span {
       font-family: "Helvetica Neue", sans-serif;
+      font-weight: bold;
       font-size: 16px;
     }
 
-    .google-login a {
-      color: #db4437;
+    .google-login {
+      background-color: #ddd;
       text-decoration: none;
     }
 
-    .naver-login a {
-      color: #2db400;
+    .naver-login {
+      background-color: #1ec800;
       text-decoration: none;
     }
 
-    .facebook-login a {
-      color: #3b5998;
+    .facebook-login {
+      background-color: #3a5691;
       text-decoration: none;
     }
 
-    .kakao-login a {
-      color: #ffeb00;
+    .kakao-login {
+      background-color: #ffeb00;
       text-decoration: none;
     }
 
@@ -266,7 +274,7 @@
           localStorage.removeItem('userId');
         }
         alert("Nova님 환영합니다!");
-        window.location.href = "login.html";
+        window.location.href = "/MainPage/Mainpage.html";
       } else {
         alert("잘못된 ID 또는 비밀번호입니다.");
       }
@@ -292,7 +300,7 @@
 <header class="headArea">
   <!-- 여기 부터 배너다 -->
   <section id="head">
-    <h1><span><a href="/MainPage/Mainpage.html" ></a></span></h1>
+    <h1><span><a href="/MainPage/Mainpage.html"></a></span></h1>
     <nav class="gnbArea">
       <menu id="gnb">
         <li>
@@ -309,9 +317,10 @@
         </li>
       </menu>
     </nav>
-</div>
-</section>
+    </div>
+  </section>
 </header>
+
 <body onload="checkRememberedUser(); start();">
   <div class="container">
     <div class="login-area">
@@ -324,9 +333,8 @@
             <input style="font-family: 'Courier New', Courier, monospace; width: 95%;" type="password" id="password"
               name="password" placeholder="Password">
           </div>
-          <input
-            style="font-family: 'Courier New', Courier, monospace; background-color: #3d3f41; border-color: #007BFF; width: 10%;"
-            type="button" value="Enter" class="enter-button" onclick="handleLogin()">
+          <input style="font-family: 'Courier New', Courier, monospace; width: 10%;" type="button" value="sign in"
+            class="enter-button" onclick="handleLogin()">
         </div>
         <div class="remember">
           <input type="checkbox" id="remember" name="remember">
@@ -338,6 +346,7 @@
               <li class="google-login">
                 <a href="google.com" onclick="signInWithGoogle()">
                   <img src="google.png">
+                  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                   <span>Google로 로그인하기</span>
                 </a>
               </li>
@@ -346,6 +355,7 @@
               <li class="naver-login">
                 <a href="naver.com" onclick="signInWithNaver()">
                   <img src="naver.png">
+                  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                   <span>Naver로 로그인하기</span>
                 </a>
               </li>
@@ -354,7 +364,8 @@
               <li class="facebook-login">
                 <a href="facebook.com" onclick="signInWithFacebook()">
                   <img src="facebook.png">
-                  <span>Facebook으로 로그인하기</span>
+                  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                  <span>Meta로 로그인하기</span>
                 </a>
               </li>
             </ul>
@@ -362,13 +373,14 @@
               <li class="kakao-login">
                 <a href="kakao.com" onclick="signInWithKakao()">
                   <img src="kakao.png">
+                  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                   <span>Kakao로 로그인하기</span>
                 </a>
               </li>
             </ul>
           </div>
           <div class="links">
-            <a href="signup.html" style="padding-left: 30px;">회원가입</a>
+            <a href="signup.html" style="padding-left: 10px;">회원가입</a>
             <a href="forgot-password.html" style="padding-left: 10px;">비밀번호 찾기</a>
           </div>
         </div>
@@ -376,58 +388,62 @@
     </div>
   </div>
   <!-- footer  이곳 부터는 풋터-->
-<footer id="foot">
-  <!--<div id="quick">
+  <footer id="foot">
+    <!--<div id="quick">
     <button type="button" class="ico">TOP</button>
   </div>
   -->
-  <nav>
-    <menu class="gnbFoot">
-      <li>
-        <h3>Nova</h3>
-        <menu>
-      <li><a href="https://software.cbnu.ac.kr/">---</a></li>
+    <nav>
+      <menu class="gnbFoot">
+        <li>
+          <h3>Nova</h3>
+          <menu>
+        <li><a href="https://software.cbnu.ac.kr/">---</a></li>
 
-    </menu>
-    </li>
-    <li>
-      <h3>For Guests</h3>
-      <menu>
-    <li><a href="list.html" >---</a></li>
-
-    </menu>
-    </li>
-    <li>
-      <h3>Member</h3>
-      <menu>
-    <li><a href="mypage.html" >---</a></li>
       </menu>
-    </li>
-    </menu>
-  </nav>
-  <section>
-    <h1><figure><img src="/MainPage/logo11.png" alt="RESTAURANT SYSTEM(假)"><figcaption>---</figcaption></figure></h1>
-    <address>
-      <dl class="contact">
-        <dt>대표번호</dt>
-        <dd>xxx-xxxx-xxxx</dd>
-        <dt>이메일 문의</dt>
-        <dd><a href="japan.html">xxxxxxx@xxxxxx</a></dd>
-      </dl>
-      <dl class="addr">
-        <dt class="blind">법인명</dt>
-        <dd>NOVA</dd>
-        <dt class="blind">주소</dt>
-        <dd>충청북도 청주시 서원구 개신동 12</dd>
-        <dt>대표이사</dt>
-        <dd>이동민</dd>
-        <dt>충북대학교 소재지</dt>
-        <dd>28644 충북 청주시 서원구 충대로 1 충북대학교</dd>
-      </dl>
-      <p>COPYRIGHT 2023 NOVA CO., LTD. NOVA ALL RIGHTS RESERVED.</p>
-    </address>
-  </section>
-</footer>
+      </li>
+      <li>
+        <h3>For Guests</h3>
+        <menu>
+      <li><a href="list.html">---</a></li>
+
+      </menu>
+      </li>
+      <li>
+        <h3>Member</h3>
+        <menu>
+      <li><a href="mypage.html">---</a></li>
+      </menu>
+      </li>
+      </menu>
+    </nav>
+    <section>
+      <h1>
+        <figure><img src="/MainPage/logo11.png" alt="RESTAURANT SYSTEM(假)">
+          <figcaption>---</figcaption>
+        </figure>
+      </h1>
+      <address>
+        <dl class="contact">
+          <dt>대표번호</dt>
+          <dd>xxx-xxxx-xxxx</dd>
+          <dt>이메일 문의</dt>
+          <dd><a href="japan.html">xxxxxxx@xxxxxx</a></dd>
+        </dl>
+        <dl class="addr">
+          <dt class="blind">법인명</dt>
+          <dd>NOVA</dd>
+          <dt class="blind">주소</dt>
+          <dd>충청북도 청주시 서원구 개신동 12</dd>
+          <dt>대표이사</dt>
+          <dd>이동민</dd>
+          <dt>충북대학교 소재지</dt>
+          <dd>28644 충북 청주시 서원구 충대로 1 충북대학교</dd>
+        </dl>
+        <p>COPYRIGHT 2023 NOVA CO., LTD. NOVA ALL RIGHTS RESERVED.</p>
+      </address>
+    </section>
+  </footer>
 </body>
 
 </html>

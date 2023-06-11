@@ -15,7 +15,6 @@
     <link href="./css/Reservation.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="/MainPage/Main layout.css">
     <script src="Selector.js"></script>
-    <script src="navbar.js"></script>
     <title>Document</title>
     <style>
         @charset "utf-8";
@@ -27,6 +26,23 @@
             align-items: center;
         }
     </style>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var reservationButton = document.querySelector('.reservation-button');
+        
+                    var reservationCount = localStorage.getItem('Reservation3');
+                    if (!reservationCount) {
+                        reservationCount = 0;
+                    } else {
+                        reservationCount = parseInt(reservationCount);
+                    }
+                    reservationButton.addEventListener('click', function () {
+                        reservationCount++;
+                        localStorage.setItem('Reservation3', reservationCount);
+                        console.log('Reservation3 count: ' + reservationCount);
+                    });
+                });
+            </script>
 </head>
 
 <body>
